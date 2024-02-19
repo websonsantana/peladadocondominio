@@ -88,47 +88,122 @@ body
     
 </script>
 </body>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-       
-		}
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 0px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+      <style>
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
         }
-		
-		header {
-		    font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-			
-			
-		img {
-            border-radius: 25%; /* Adiciona bordas arredondadas */
-            width: 90px; /* Ajusta o tamanho da imagem conforme necessário */
-            height: 50px;
-			float: left; /* Para alinhar a imagem à esquerda do texto */
-            margin-right: 20px; /* Espaço à direita da imagem */
-			margin-left: 20px; /* Espaço à direita da imagem */
-    }
-	
-	
+        .gallery-item {
+            margin: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .gallery-item img, .gallery-item video {
+            width: 200px;
+            height: 150px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+        .gallery-item:hover .video-overlay {
+            opacity: 1;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .modal-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .modal-content img {
+            max-width: 90%;
+            max-height: 90%;
+        }
     </style>
-	
-	<header>
-      
-<h1> Em breve novidades</h1>
-<p>
-<h1>em manutenção</h1>
+</head>
+<body>
+    <h1>Galeria de Imagens e Vídeos</h1>
+    <div class="gallery">
+        <div class="gallery-item" onclick="openModal('imagem1.jpg')">
+            <img src="imagem1.jpg" alt="Imagem 1">
+        </div>
+        <div class="gallery-item" onclick="openModal('imagem2.jpg')">
+            <img src="imagem2.jpg" alt="Imagem 2">
+        </div>
+        <div class="gallery-item" onclick="openModal('imagem3.jpg')">
+            <img src="imagem3.jpg" alt="Imagem 3">
+        </div>
+        <div class="gallery-item" onclick="playVideo('video1.mp4')">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="gallery-item" onclick="playVideo('video2.mp4')">
+            <video controls>
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <div class="modal-content">
+            <img id="modalImg" src="" alt="Imagem em modal">
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImg");
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        function playVideo(videoSrc) {
+            var newWindow = window.open(videoSrc, '_blank');
+            setTimeout(function() {
+                newWindow.close();
+            }, 5000000); // Fechar a aba do vídeo após 5 segundos (5000 milissegundos)
+        }
+    </script>
+
+</body>
 </header>
 </head>
 <footer>
