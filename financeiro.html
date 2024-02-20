@@ -25,7 +25,25 @@ body
 </center>
 </head>
 <body>
+
+	<button onclick="exibirSaldo()">Exibir Saldo em Caixa</button>
+
+<div id="saldo-em-caixa">
+    <h2>Saldo em Caixa</h2>
+    <p>O saldo em caixa é: R$ <span id="saldo">0.00</span></p>
+    <button onclick="fecharSaldo()">Fechar</button>
+</div>
+	
 <script type="text/javascript">
+	<script>
+	function exibirSaldo() {
+    document.getElementById("saldo-em-caixa").style.display = "block";
+    // Aqui você pode adicionar lógica para buscar e exibir o saldo real em vez de um valor fixo
+}
+
+function fecharSaldo() {
+    document.getElementById("saldo-em-caixa").style.display = "none";
+}
  </script>
 </body>
 <style>
@@ -99,7 +117,18 @@ body
 
         nav a:hover {
             background-color: #555;
-			
+		
+    #saldo-em-caixa {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}		
 		
           
 			
