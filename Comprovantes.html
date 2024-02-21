@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Armazenamento de Comprovantes e Notas Fiscais</title>
+<style>
+/* Estilo para miniatura do comprovante */
+.comprovante-miniatura {
+    width: 100px;
+    height: 150px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Estilo para descrição do comprovante */
+.comprovante-descricao {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+/* Estilo para a imagem ampliada */
+#comprovante-ampliado {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* Estilo para o fundo escuro ao exibir a imagem ampliada */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+}
+</style>
+</head>
+<body>
+
+<div class="comprovante">
+    <img src="notacafe18.02.24.jpg" alt="Comprovante 1" class="comprovante-miniatura" onclick="exibirComprovante(this.src)">
+    <div class="comprovante-descricao">
+	    <p>18 de Fevereiro de 2024</p>
+        <p>Nota Fiscal de itens do café da mãnha</p>
+		<p>Valor da Compra : R$ 68,40</p>
+		<p>
+    </div>
+</div>
+<br>
+<div class="comprovante">
+    <img src="notapão18.02.24.jpg" alt="Comprovante 2" class="comprovante-miniatura" onclick="exibirComprovante(this.src)">
+    <div class="comprovante-descricao">
+        <p>18 de Fevereiro de 2024</p>
+        <p>Nota Fiscal do pão do café da mãnha</p>
+		<p>Valor da Compra : R$ 19,65</p>
+    </div>
+</div>
+
+<!-- Div para exibir a imagem ampliada -->
+<div id="overlay" onclick="fecharComprovante()">
+    <img id="comprovante-ampliado" src="" alt="Comprovante Ampliado">
+</div>
+
+<script>
+function exibirComprovante(src) {
+    var comprovanteAmpliado = document.getElementById("comprovante-ampliado");
+    comprovanteAmpliado.src = src;
+    
+    var overlay = document.getElementById("overlay");
+    overlay.style.display = "block";
+    comprovanteAmpliado.style.display = "block";
+}
+
+function fecharComprovante() {
+    var overlay = document.getElementById("overlay");
+    var comprovanteAmpliado = document.getElementById("comprovante-ampliado");
+    overlay.style.display = "none";
+    comprovanteAmpliado.style.display = "none";
+}
+</script>
+
+</body>
+</html>
