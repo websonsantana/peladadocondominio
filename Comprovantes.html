@@ -7,8 +7,8 @@
 <style>
 /* Estilo para miniatura do comprovante */
 .comprovante-miniatura {
-    width: 100px;
-    height: 150px;
+    width: 250px;
+    height: 450px;
     margin-right: 10px;
     cursor: pointer;
 }
@@ -47,22 +47,35 @@
 
 <div class="comprovante">
     <img src="notacafe18.02.24.jpg" alt="Comprovante 1" class="comprovante-miniatura" onclick="exibirComprovante(this.src)">
+	<p>
     <div class="comprovante-descricao">
 	    <p>18 de Fevereiro de 2024</p>
-        <p>Nota Fiscal de itens do café da mãnha</p>
-		<p>Valor da Compra : R$ 68,40</p>
+        <p>Nota Fiscal de itens do café da mãnha + 04 Coca Cola</p>
+		<p>Valor da Compra : R$ 68,40 + R$ 40,00</p>
 		<p>
     </div>
 </div>
 <br>
 <div class="comprovante">
     <img src="notapão18.02.24.jpg" alt="Comprovante 2" class="comprovante-miniatura" onclick="exibirComprovante(this.src)">
+	<p>
     <div class="comprovante-descricao">
         <p>18 de Fevereiro de 2024</p>
         <p>Nota Fiscal do pão do café da mãnha</p>
 		<p>Valor da Compra : R$ 19,65</p>
     </div>
 </div>
+<div class="comprovante">
+    <img src="comprovante3.jpg" alt="Comprovante 3" class="comprovante-miniatura" onclick="exibirComprovante(this.src)">
+	<p>
+    <div class="comprovante-descricao">
+	    <p>25 de Fevereiro de 2024</p>
+        <p>Nota Fiscal de itens do café da mãnha +  03 coca cola</p>
+		<p>Valor da Compra : R$ 130,00 + R$ 30,00</p>
+		<p>
+    </div>
+</div>
+<br>
 
 <!-- Div para exibir a imagem ampliada -->
 <div id="overlay" onclick="fecharComprovante()">
