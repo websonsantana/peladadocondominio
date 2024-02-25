@@ -37,11 +37,11 @@ body
 /* Estilos para a caixa flutuante */
 #saldo-em-caixa {
     display: none; /* Inicialmente escondido */
-    position:10%;
+    position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: #fff;
-    border: 3px solid #ccc;
+    border: 1px solid #ccc;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 9999;
@@ -50,11 +50,10 @@ body
 </head>
 <body>
 
-<button onclick="exibirSaldo()"><h3>Exibir Saldo em Caixa</h3></button>
-<button><a href="Comprovantes.html"><h3>Comprovantes</h3></a></button>
+<button onclick="exibirSaldo()">Exibir Saldo em Caixa</button>
 
 <div id="saldo-em-caixa">
-    <span id="saldo" style="color: black;">O saldo em caixa é de: <p><center><h2>R$ 40,00</h2></center></span></p>
+    <span id="saldo" style="color: black;">O saldo em caixa é de: <p><center><h2>R$ 29,99</h2></center></span></p>
     <button onclick="fecharSaldo()">Fechar</button>
 </div>
 
@@ -194,7 +193,7 @@ function fecharSaldo() {
 	<tr>
             <th>Data</th>
             <th>Descrição</th>
-            <th>Gasto</th>
+            <th>Valor</th>
 	</tr>
         <tr>
             <td>04/02/2024</td>
@@ -207,16 +206,14 @@ function fecharSaldo() {
             <td>R$ 00,00</td>
 	</tr>
         <tr>
-<table>
-            <th>Arrecardado R$ 00,00 Saldo R$ 00,00</th>  
-</table>
+            <th>Saldo R$ 00,00</th>            
         </tr>
 </table>
 <table>
         <tr>
             <th>Data</th>
             <th>Descrição</th>
-            <th>Gasto</th>
+            <th>Valor</th>
         </tr>
         <tr>
             <td>11/02/2024</td>
@@ -229,16 +226,13 @@ function fecharSaldo() {
             <td>R$ 32,00</td>
 	</tr>
         <tr>
-<table>
-		<th>Arrecardado R$ 00,00 Saldo R$ 18,05</th>
-</table>
-	</tr>
+            <th>Saldo R$ 20,00</th>
 </table>		
 <table>
 	<tr>
             <th>Data</th>
             <th>Descrição</th>
-            <th>Gasto</th>
+            <th>Valor</th>
         </tr>
         <tr>
             <td>18/02/2024</td>
@@ -248,23 +242,21 @@ function fecharSaldo() {
 	<tr>
             <td>18/02/2024</td>
             <td>lavagem colete</td>
-            <td>R$ 00,00</td>
+            <td>R$ 32,00</td>
 	</tr>
         <tr>
-<table>		
-            <th>Arrecardado R$ 150,00 Saldo R$ 21,95 </th> 
-</table>
+            <th>Saldo R$ 09,99</th> 
 </table>
 <table>
 	<tr>
             <th>Data</th>
             <th>Descrição</th>
-            <th>Gasto</th>
+            <th>Valor</th>
 	</tr>
         <tr>
             <td>25/02/2024</td>
             <td>Café da manhã</td>
-            <td>R$ 00,00</td>
+            <td>R$ 130,00</td>
 	</tr>
         <tr>
             <td>25/02/2024</td>
@@ -272,9 +264,7 @@ function fecharSaldo() {
             <td>R$ 00,00</td>
 	</tr>
         <tr>
-<table>
-            <th>Arrecardado R$ 00,00 Saldo R$ 00,00</th>
-</table>
+            <th>Saldo R$ 00,00</th>
         </tr>
 </table>
 ...
