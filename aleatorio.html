@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Equipes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #444;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: left;
+        }
+        nav {
+            background-color: #f0f0f0;
+            color: black;
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: -200px;
+            transition: left 0.3s ease;
+            padding-top: 60px;
+        }
+        nav.open {
+            left: 0;
+        }
+        nav a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+        nav img {
+            display: block;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        section {
+            padding: 20px;
+            margin-left: 0px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        /* Estilo para os botões */
+        button {
+            background-color: #4CAF50; /* Verde grama */
+            color: white; /* Cor do texto branca */
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Um tom mais escuro quando o botão é passado o mouse */
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <button onclick="toggleMenu()">Menu</button>
+        <center>
+            <img src="brasao.png" alt="Logo" width="150">
+            <h1>Pelada Futebol Club</h1>
+        </center>
+    </header>
+    
+    <nav id="sideNav" onclick="closeMenu()">
+        <img src="brasao.png" alt="Logo" width="90">
+        <center><b>Pelada Futebol Club</b></center>
+        
+        <br>
+        <P>
+            <a href="index.html" > Início</a>
+            <a href="financeiro.html">Financeiro</a>
+            <a href="destaque.html">Destaque</a>
+            <a href="artilheiro.html">Artilheiro</a>
+            <a href="goleiro.html">Goleiro</a>
+            <a href="bolamurcha.html">Bola Murcha</a>
+            <a href="rackinggols.html">Ranking de Gols</a>
+            <a href="Comprovantes.html">Comprovantes</a>
+            <a href="aleatorio.html">Gerador de Time</a>
+        </nav>
+        <section>
+            <h2>Gerador de Equipes e Grupos Aleatórios</h2>
+            <label for="leaderList">Líderes de Equipe (separados por vírgulas):</label><br>
+            <textarea id="leaderList" rows="2" cols="50"></textarea><br>
+            <label for="participantList">Membros da Equipe (separados por vírgulas):</label><br>
+            <textarea id="participantList" rows="4" cols="50"></textarea><br>
+            <label for="numTeams">Número de Equipes:</label>
+            <input type="number" id="numTeams" min="1" value="2"><br>
+            <label for="numGroups">Número de Grupos por Equipe:</label>
+            <input type="number" id="numGroups" min="1" value="2"><br>
+            <button onclick="generateTeams()">Gerar Equipes</button>
+            <button onclick="clearFields()">Limpar</button><br><br>
+            <div id="result"></div>
+        </section>
+        <footer>
+            <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
+        </footer>
+
+        <script>
+            function toggleMenu() {
+                var nav = document.getElementById('sideNav');
+                nav.classList.toggle('open');
+            }
+
+            function closeMenu() {
+                var nav = document.getElementById('sideNav');
+                if (nav.classList.contains('open')) {
+                    nav.classList.remove('open');
+                }
+            }
+			
+			function generateTeams() {
+                var leaderList = document.getElementById("leaderList").value;
+                var participantList = document.getElementById("participantList").value;
+                var numTeams = parseInt(document.getElementById("numTeams").value);
+                var numGroups = parseInt(document.getElementById("numGroups").value);
+                var leaders = leaderList.split(",").map(function(item) {
+                    return item.trim();
+                }).filter(function(item) {
+                    return item !== "";
+                });
+                var participants = participantList.split(",").map(function(item) {
+                    return item.trim();
+                }).filter(function(item) {
+                    return item !== "";
+                });
+
+                var teams = [];
+                for (var i = 0; i < numTeams; i++) {
+                    teams.push([]);
+                }
+
+                // Distribui os líderes de equipe
+                for (var j = 0; j < leaders.length; j++) {
+                    teams[j % numTeams].push(leaders[j] + " (Líder)");
+                }
+
+                // Completa as equipes com participantes restantes
+                var remainingParticipants = shuffle(participants.slice()); // cria uma cópia embaralhada de participants
+                for (var k = 0; k < teams.length; k++) {
+                    while (teams[k].length < numGroups) {
+                        if (remainingParticipants.length === 0) break;
+                        teams[k].push(remainingParticipants.pop());
+                    }
+                }
+
+                var resultHTML = "";
+                for (var l = 0; l < teams.length; l++) {
+                    resultHTML += "<h3>Equipe " + (l + 1) + ":</h3>";
+                    for (var m = 0; m < numGroups; m++) {
+                        resultHTML += "<p>Grupo " + (m + 1) + ": " + teams[l][m] + "</p>";
+                    }
+                }
+
+                document.getElementById("result").innerHTML = resultHTML;
+            }
+
+            function shuffle(array) {
+                var currentIndex = array.length, temporaryValue, randomIndex;
+
+                while (0 !== currentIndex) {
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex -= 1;
+
+                    temporaryValue = array[currentIndex];
+                    array[currentIndex] = array[randomIndex];
+                    array[randomIndex] = temporaryValue;
+                }
+
+                return array;
+            }
+
+            function clearFields() {
+                document.getElementById("leaderList").value = "";
+                document.getElementById("participantList").value = "";
+                document.getElementById("numTeams").value = "2";
+                document.getElementById("numGroups").value = "2";
+                document.getElementById("result").innerHTML = "";
+            }
+        </script>
+</body>
+</html>
