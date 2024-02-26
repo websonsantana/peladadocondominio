@@ -1,151 +1,124 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-<style>
-body 
-{  background-color: #000000; }
-</style>
-<center>
-<img src="brasao.jpg" alt = "logo" width= "120px",height= "120px">
-<p><a class="blue-text" ><h2>Pelada futebol club</h2></a>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Pelada futebol club </title>
-
-<body>
-
-<nav>
-    <a href="index.html" class="blue-text"> Início</a>
-    <a href="financeiro.html">Financeiro</a>
-    <a href="Peladas.html">Peladas</a>
-    
-  	
-</nav>
-<</body>
-</html>
-</center>
-</head>
-<body>
-<script type="text/javascript">
- </script>
-</body>
-<style>
-        .blue-text {
-            color: #000;
-        }
-        body {
-            background-color: #fff;
-            color: white; /* Adicionado para definir a cor do texto como branco */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 30px;
-        }
-
-        header {
-		    background-color: #ffffff;
-            text-align: left;
-			margin-left: 30px;
-            padding: 30px;
-            color: #000;
-			
-        }
-
-
-	    {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-			
-        }
-
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-			fixed: 10px
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            background-color: #555;
-			
-		
-          
-			
-    </style>
-       
-	
-<script>
-    
-</script>
-</body>
+    <title>Hospeda Pet PE</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-       
-		}
-
+            background-color: #f0f0f0;
+            color: #444;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: left;
+        }
+        nav {
+            background-color: #f0f0f0;
+            color: black;
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: -200px;
+            transition: left 0.3s ease;
+            padding-top: 60px;
+        }
+        nav.open {
+            left: 0;
+        }
+        nav a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+        nav img {
+            display: block;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        section {
+            padding: 20px;
+            margin-left: 0px;
+            text-align: center;
+        }
         footer {
             background-color: #333;
             color: white;
-            padding: 0px;
+            padding: 20px;
             text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
-		
-		header {
-		    font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-			
-			
-		img {
-            border-radius: 25%; /* Adiciona bordas arredondadas */
-            width: 90px; /* Ajusta o tamanho da imagem conforme necessário */
-            height: 90px;
-			float: left; /* Para alinhar a imagem à esquerda do texto */
-            margin-right: 20px; /* Espaço à direita da imagem */
-			margin-left: 20px; /* Espaço à direita da imagem */
-    }
-	
-	
+        @media screen and (max-width: px) {
+            nav {
+                left: -200px;
+            }
+            section {
+                margin-left: 0;
+            }
+            nav.open {
+                left: -200px;
+            }
+            button {
+                display: block;
+            }
+        }
     </style>
-	
+</head>
+<body>
+    
 	<header>
+	<button onclick="toggleMenu()">Menu</button>
 	<center>
+	    <img src="brasao.png" alt="Logo" width="150">
+        <h1>Pelada Futebol Club</h1>
+		</center>
+		
+		
+    </header>
+    
+    <nav id="sideNav" onclick="closeMenu()">
+        <img src="brasao.png" alt="Logo" width="90">
+		<center>Pelada Futebol Club</center>
+		<br>
+		<P>
+		<br>
+		<P>
+        <a href="index.html" > Início</a>
+        <a href="financeiro.html">Financeiro</a>
+        <a href="destaque.html">Destaque</a>
+		<a href="artilheiro.html">Artilheiro</a>
+		<a href="goleiro.html">Goleiro</a>
+		<a href="bolamurcha.html">Bola Murcha</a>
+		<a href="rankinggols.html">Ranking de Gols</a>
+		<a href="Comprovantes.html">Comprovantes</a>
+    </nav>
+    <section>
+        <center>
       <table>
            <tbody>
             <tr>
-			    <td><a href="artilheiro.html"><img src="artilheiro2.jpg" alt="logo" width="90px" height="90px"></td>
+			    <td><a href="artilheiro.html"><img src="artilheiro2.png" alt="logo" width="70px" height="70px"></td>
 				<td><a href="artilheiro.html"><H3>Artilheiro do dia</H3></a></td>
-			</tr>
-            <tr>
-                <td><a href="destaque.html"><img src="destaque2.jpg" alt logo" width="90px" height="90px"></td>
+			
+                <td><a href="destaque.html"><img src="destaque2.png" alt logo" width="70px" height="70px"></td>
                 <td><a href="destaque.html"><H3>Destaque do Mês</H3></a></td>
 			</tr>
             <tr>
-                <td><a href="rackinggols.html"><img src="bola.jpg" alt="logo" width="90px" height="90px"></td>
+                <td><a href="rackinggols.html"><img src="bola.png" alt="logo" width="70px" height="70px"></td>
                 <td><a href="rackinggols.html"><H3>Rancking de Gols</H3></a></td>
-			</tr>
-            <tr>
-                <td><a href=""><img src="bolamurcha.jpg" alt="logo" width="90px" height="90px"></td>
+			
+                <td><a href=""><img src="bolamurcha.png" alt="logo" width="70px" height="70px"></td>
                 <td><a href="bolamurcha.html"><H3>Bola Murcha</H3></td>
 			</tr>
             <tr>
-				<td><a href="goleiro.html"><img src="goleiro.jpg" alt="logo" width="90px" height="90px"></td>
+				<td><a href="goleiro.html"><img src="goleiro.png" alt="logo" width="70px" height="70px"></td>
                 <td><a href="goleiro.html"><H3>Melhor Goleiro</H3></td>
 				
 		   </tr>
@@ -153,84 +126,23 @@ body
         </tbody>
     </table>
 	<center>
-<p>
-<br>
-<br>
-<br>
-</header>
-<style>
-		
-		
-		
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 2px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        #logo {
-            width: 100px;
-            height: 100px;
-        }
-		
-		img {
-		 border-radius: 50%; /* Adiciona bordas arredondadas */
-		 
-		 .blue-text {
-            color: #000;
-        }
-        body {
-            background-color: #fff;
-            color: white; /* Adicionado para definir a cor do texto como branco */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 10px;
+    </section>
+    <footer>
+        <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('sideNav');
+            nav.classList.toggle('open');
         }
 
-        header {
-		    background-color: #ffffff;
-            text-align: left;
-			margin-left: 30px;
-            padding: 10px;
-            color: #000;
-			
+        function closeMenu() {
+            var nav = document.getElementById('sideNav');
+            if (nav.classList.contains('open')) {
+                nav.classList.remove('open');
+            }
         }
-
-
-	    {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-			
-        }
-
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-			fixed: 10px
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            background-color: #555;
-    </style>
-</head>
-<footer>
-    <p>&copy; 2024 Pelada do condomínio. Todos os direitos reservados.</p>
-</footer>
+    </script>
+</body>
 </html>
