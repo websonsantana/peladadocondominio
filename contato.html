@@ -157,7 +157,7 @@
     var email = document.getElementById("email").value;
     var mensagem = document.getElementById("mensagem").value;
     var numero = "5581987930949"; // Número de telefone pré-definido
-    var mensagemFormatada = "Nome: " + nome "<br>"+ "Email: " + email "<br>" + "Mensagem: " + mensagem;
+    var mensagemFormatada = "Nome: " + nome + \n"Email: " + email + \n"Mensagem: " + mensagem;
     var url = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagemFormatada);
     window.open(url, '_blank');
 }
