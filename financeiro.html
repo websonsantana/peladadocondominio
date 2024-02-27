@@ -1,281 +1,283 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-<style>
-body 
-{  background-color: #000000; }
-</style>
-<center>
-<img src="prestacao.jpg" alt = "logo" width= "120px",height= "120px">
-<p><a class="blue-text" ><h2>Prestação de Contas</h2></a>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Prestação de Contas </title>
-
-<body>
-
-<nav>
-    <a href="index.html" > Início</a>
-    <a href="financeiro.html"class="blue-text">Financeiro</a>
-    <a href="Peladas.html">Peladas</a>
-  	
-</nav>
-<</body>
-</html>
-</center>
-</head>
-<body>
-<script type="text/javascript">
- </script>
-</body>
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saldo em Caixa</title>
-<style>
-/* Estilos para a caixa flutuante */
-#saldo-em-caixa {
-    display: none; /* Inicialmente escondido */
-    position: fixed;
-    bottom: 300px;
-    right: 100px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
-}
-</style>
-</head>
-<body>
-<center>
-<button onclick="exibirSaldo()"><h4>Exibir Saldo em Caixa</h4></button>
-<button> <a href="Comprovantes.html"><h4>Comprovantes</h4></a></button>
-</center>
-<div id="saldo-em-caixa">
-    <span id="saldo" style="color: black;">O saldo em caixa é de: <p><center><h2><h1>💰 R$ 40,00</h1></h2></center></span></p>
-    <button onclick="fecharSaldo()">Fechar</button>
-</div>
-
-<script>
-function exibirSaldo() {
-    document.getElementById("saldo-em-caixa").style.display = "block";
-    // Aqui você pode adicionar lógica para buscar e exibir o saldo real em vez de um valor fixo
-}
-
-function fecharSaldo() {
-    document.getElementById("saldo-em-caixa").style.display = "none";
-}
-</script>
-
-</body>
-<style>
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-
-
-
-        .blue-text {
-            color: #000;
-        }
-        body {
-            background-color: #fff;
-            color: white; /* Adicionado para definir a cor do texto como branco */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 30px;
-        }
-
-        header {
-		    background-color: #ffffff;
-            text-align: left;
-			margin-left: 30px;
-            padding: 30px;
-            color: #000;
-			
-        }
-
-
-	    {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-			
-        }
-
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-			fixed: 10px
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            background-color: #555;
-			
-		
-          
-			
-    </style>
-       
-	
-<script>
-    
-</script>
-</body>
+    <title>Prestação de Contas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-       
-		}
-
+            background-color: #f0f0f0;
+            color: #444;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: left;
+        }
+        nav {
+            background-color: #f0f0f0;
+            color: black;
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: -200px;
+            transition: left 0.3s ease;
+            padding-top: 60px;
+        }
+        nav.open {
+            left: 0;
+        }
+        nav a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+        nav img {
+            display: block;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        section {
+            padding: 20px;
+            margin-left: 0px;
+            text-align: center;
+        }
         footer {
             background-color: #333;
             color: white;
-            padding: 0px;
+            padding: 20px;
             text-align: center;
-            position: fixed;
-            bottom: 0;
+        }
+        button {
+            background-color: #4CAF50; /* Verde grama */
+            color: white; /* Cor do texto branca */
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Um tom mais escuro quando o botão é passado o mouse */
+        }
+        @media screen and (max-width: px) {
+            nav {
+                left: -200px;
+            }
+            section {
+                margin-left: 0;
+            }
+            nav.open {
+                left: -200px;
+            }
+            button {
+                display: block;
+            }
+        }
+
+        /* Adicionando espaçamento entre as colunas da tabela */
+        table {
+            border-collapse: collapse;
             width: 100%;
         }
-		
-		header {
-		    font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-			
-			
-		img {
-            border-radius: 25%; /* Adiciona bordas arredondadas */
-            width: 90px; /* Ajusta o tamanho da imagem conforme necessário */
-            height: 90px;
-			float: left; /* Para alinhar a imagem à esquerda do texto */
-            margin-right: 20px; /* Espaço à direita da imagem */
-			margin-left: 20px; /* Espaço à direita da imagem */
-    }
-	
-	
+
+        th, td {
+            padding: 8px; /* Espaçamento interno */
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
     </style>
-	
-	<header>
-	
-	<table>
-	<tr>
-            <th>Data</th>
-            <th>Descrição</th>
-            <th>Valor</th>
-	</tr>
-        <tr>
-            <td>04/02/2024</td>
-            <td>Café da manhã</td>
-            <td>R$ 00,00</td>
-	</tr>
-        <tr>
-            <td>04/02/2024</td>
-            <td>bola</td>
-            <td>R$ 00,00</td>
-	</tr>
-        <tr>
-            <th>Saldo R$ 00,00</th>            
-        </tr>
-</table>
-<table>
-        <tr>
-            <th>Data</th>
-            <th>Descrição</th>
-            <th>Valor</th>
-        </tr>
-        <tr>
-            <td>11/02/2024</td>
-            <td>Café da manhã</td>
-            <td>R$ 123,50</td>
-	</tr>
-	<tr>
-            <td>11/02/2024</td>
-            <td>lavagem colete</td>
-            <td>R$ 32,00</td>
-	</tr>
-        <tr>
-            <th>Saldo R$ 21,00</th>
-</table>		
-<table>
-	<tr>
-            <th>Data</th>
-            <th>Descrição</th>
-            <th>Valor</th>
-        </tr>
-        <tr>
-            <td>18/02/2024</td>
-            <td>Café da manhã</td>
-            <td>R$ 128,05</td>
-	</tr>
-	<tr>
-            <td>18/02/2024</td>
-            <td>lavagem colete</td>
-            <td>R$ 00,00</td>
-	</tr>
-        <tr>
-            <th>Saldo R$ 19,00</th> 
-</table>
-<table>
-	<tr>
-            <th>Data</th>
-            <th>Descrição</th>
-            <th>Valor</th>
-	</tr>
-        <tr>
-            <td>25/02/2024</td>
-            <td>Café da manhã</td>
-            <td>R$ 130,00</td>
-	</tr>
-        <tr>
-            <td>25/02/2024</td>
-            <td>Lavagem Colete</td>
-            <td>R$ 00,00</td>
-	</tr>
-        <tr>
-            <th>Saldo R$ 00,00</th>
-        </tr>
-</table>
-...
-<p>
-<br>
-<br>
-<br>
-</header>
 </head>
-<footer>
-    <p>&copy; 2024 Pelada do condomínio. Todos os direitos reservados.</p>
-</footer>
+<body>
+    
+    <header>
+        <button onclick="toggleMenu()">Menu</button>
+        <center>
+        <h1><b>Prestação de Contas</b></h1>
+        </center>
+        <center>
+            <button onclick="exibirSaldo()">Exibir Saldo em Caixa</button>
+            <button onclick="window.location.href='Comprovantes.html'">Comprovantes</button>
+        </center>
+    </header>
+    
+    <nav id="sideNav" onclick="closeMenu()">
+        <img src="brasao.png" alt="Logo" width="90">
+        <center>Pelada Futebol Club</center>
+        <br>
+        <P>
+        <br>
+        <P>
+            
+        <a href="index.html" > Início</a>
+        <a href="financeiro.html">Financeiro</a>
+        <a href="destaque.html">Destaque</a>
+        <a href="artilheiro.html">Artilheiro</a>
+        <a href="goleiro.html">Goleiro</a>
+        <a href="bolamurcha.html">Bola Murcha</a>
+        <a href="rackinggols.html">Ranking de Gols</a>
+        <a href="Comprovantes.html">Comprovantes</a>
+        <a href="aleatorio.html">Gerador de Equipes</a>
+        <a href="contato.html">Contate-nos</a>
+        <a href="patrocinio.html">Patrocínio</a>
+        <img src="logo.png" alt="Logo" width="150" height="28">
+            
+    </nav>
+    
+    <section>
+        <div id="saldo-em-caixa">
+            <span id="saldo" style="color: black;">O saldo em caixa é de: <p><center><h2><h1>💰 R$ 40,00</h1></h2></center></span></p>
+            <button onclick="fecharSaldo()">Fechar</button>
+        </div>
+
+        <script>
+            function exibirSaldo() {
+                document.getElementById("saldo-em-caixa").style.display = "block";
+                // Aqui você pode adicionar lógica para buscar e exibir o saldo real em vez de um valor fixo
+            }
+
+            function fecharSaldo() {
+                document.getElementById("saldo-em-caixa").style.display = "none";
+            }
+        </script>
+
+        
+
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+            </tr>
+            <tr>
+                <td>04/02/2024</td>
+                <td>Café da manhã</td>
+                <td>R$ 00,00</td>
+            </tr>
+            <tr>
+                <td>04/02/2024</td>
+                <td>bola</td>
+                <td>R$ 00,00</td>
+            </tr>
+            <tr>
+                <th>Saldo R$ 00,00</th>            
+            </tr>
+        </table>
+		<hr> <!-- Linha horizontal para separar -->
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+            </tr>
+            <tr>
+                <td>11/02/2024</td>
+                <td>Café da manhã</td>
+                <td>R$ 123,50</td>
+            </tr>
+            <tr>
+                <td>11/02/2024</td>
+                <td>lavagem colete</td>
+                <td>R$ 32,00</td>
+            </tr>
+            <tr>
+                <th>Saldo R$ 21,00</th>
+        </table>
+        <hr> <!-- Linha horizontal para separar -->        
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+            </tr>
+            <tr>
+                <td>18/02/2024</td>
+                <td>Café da manhã</td>
+                <td>R$ 128,05</td>
+            </tr>
+            <tr>
+                <td>18/02/2024</td>
+                <td>lavagem colete</td>
+                <td>R$ 00,00</td>
+            </tr>
+            <tr>
+                <th>Saldo R$ 19,00</th> 
+        </table> 
+        <hr> <!-- Linha horizontal para separar -->		
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+            </tr>
+            <tr>
+                <td>25/02/2024</td>
+                <td>Café da manhã</td>
+                <td>R$ 130,00</td>
+            </tr>
+            <tr>
+                <td>25/02/2024</td>
+                <td>Lavagem Colete</td>
+                <td>R$ 00,00</td>
+            </tr>
+            <tr>
+                <th>Saldo R$ 00,00</th>
+            </tr>
+        </table>
+    </section>
+    
+    <style>
+        /* Estilos para a caixa flutuante */
+        #saldo-em-caixa {
+            display: none; /* Inicialmente escondido */
+            position: fixed;
+            bottom: 300px;
+            right: 300px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+    </style>
+    <footer>
+        <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
+    </footer>
+    <br>
+    <p>
+    <p>
+    <center>
+    <img src="logo.png" alt="Logo" width="200">
+    </center>
+    </p>
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('sideNav');
+            nav.classList.toggle('open');
+        }
+
+        function closeMenu() {
+            var nav = document.getElementById('sideNav');
+            if (nav.classList.contains('open')) {
+                nav.classList.remove('open');
+            }
+        }
+    </script>
+</body>
 </html>
