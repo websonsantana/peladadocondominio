@@ -1,98 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bola murcha</title>
-	    <style>
-		
-		
-		
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        #logo {
-            width: 200px;
-            height: 200px;
-        }
-		
-		img {
-		 border-radius: 50%; /* Adiciona bordas arredondadas */
-		 border: 3px solid black;
-		 
-		 .blue-text {
-            color: #000;
-        }
+    <title>Bola Murcha</title>
+    <style>
         body {
-            background-color: #fff;
-            color: white; /* Adicionado para definir a cor do texto como branco */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 30px;
-        }
-
-        header {
-		    background-color: #ffffff;
-            text-align: left;
-			margin-left: 30px;
-            padding: 30px;
-            color: #000;
-			
-        }
-
-
-	    {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-			
+            background-color: #f0f0f0;
+            color: #444;
         }
-
-        nav {
+        header {
             background-color: #333;
             color: white;
-            padding: 10px;
-            text-align: center;
-			fixed: 10px
+            padding: 20px;
+            text-align: left;
         }
-
+        nav {
+            background-color: #f0f0f0;
+            color: black;
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: -200px;
+            transition: left 0.3s ease;
+            padding-top: 60px;
+        }
+        nav.open {
+            left: 0;
+        }
         nav a {
-            color: white;
+            display: block;
+            color: black;
             text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+        nav img {
+            display: block;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        section {
+            padding: 20px;
+            margin-left: 0px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            background-color: #4CAF50; /* Verde grama */
+            color: white; /* Cor do texto branca */
+            border: none;
             padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
             display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
         }
 
-        nav a:hover {
-            background-color: #555;
+        button:hover {
+            background-color: #45a049; /* Um tom mais escuro quando o botão é passado o mouse */
+        }
+        @media screen and (max-width: px) {
+            nav {
+                left: -200px;
+            }
+            section {
+                margin-left: 0;
+            }
+            nav.open {
+                left: -200px;
+            }
+            button {
+                display: block;
+            }
+        }
 
+        /* Adicionando espaçamento entre as colunas da tabela */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-		
+        th, td {
+            padding: 8px; /* Espaçamento interno */
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
+    
+    <header>
+        <button onclick="toggleMenu()">Menu</button>
+        <center>
+        <h1><b>Bola Murcha</b></h1>
+        </center>
+        </header>
+    
+    <nav id="sideNav" onclick="closeMenu()">
+        <img src="brasao.png" alt="Logo" width="90">
+        <center>Pelada Futebol Club</center>
+        <br>
+        <P>
+        <br>
+        <P>
+            
+        <a href="index.html" > Início</a>
+        <a href="financeiro.html">Financeiro</a>
+        <a href="destaque.html">Destaque</a>
+        <a href="artilheiro.html">Artilheiro</a>
+        <a href="goleiro.html">Goleiro</a>
+        <a href="bolamurcha.html">Bola Murcha</a>
+        <a href="rackinggols.html">Ranking de Gols</a>
+        <a href="Comprovantes.html">Comprovantes</a>
+        <a href="aleatorio.html">Gerador de Equipes</a>
+        <a href="contato.html">Contate-nos</a>
+        <a href="patrocinio.html">Patrocínio</a>
+        <img src="logo.png" alt="Logo" width="150" height="28">
+            
+    </nav>
+    
+    <section>
+       <center> 
+	   Em Desenvolvimento
+	   <p>
+	   Aceito Sugestões
+	   </center>
+    </section>
+    
+    <style>
+        /* Estilos para a caixa flutuante */
+        #saldo-em-caixa {
+            display: none; /* Inicialmente escondido */
+            position: fixed;
+            bottom: 300px;
+            right: 300px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+    </style>
+    <footer>
+        <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
+    </footer>
+    <br>
+    <p>
+    <p>
+    <center>
+    <img src="logo.png" alt="Logo" width="200">
+    </center>
+    </p>
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('sideNav');
+            nav.classList.toggle('open');
+        }
 
-    <center><img id="logo" src="bolamurcha.jpg" alt="logo"width="300px" height="90px">
-    <h2>Bola Murcha</h2></center>
-	<nav>
-   <center> <a href="index.html"> <h1>Início</h1></a></center>
-      	
-</nav>
-
-       </body>
-    </table>
-	
-<body>
-	<center> <h1>Em construção</h1></center>
+        function closeMenu() {
+            var nav = document.getElementById('sideNav');
+            if (nav.classList.contains('open')) {
+                nav.classList.remove('open');
+            }
+        }
+    </script>
 </body>
 </html>
