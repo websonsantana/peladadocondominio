@@ -153,14 +153,15 @@
         });
 
             function enviarMensagem() {
-            var nome = document.getElementById("nome").value;
-            var email = document.getElementById("email").value;
-            var mensagem = document.getElementById("mensagem").value;
-            var numero = "5581987930949"; // Número de telefone pré-definido
-            var mensagemFormatada = "Nome: " + nome + "%0a" + "Email: " + email + "%0a" + "Mensagem: " + mensagem;
-            var url = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagemFormatada);
-            window.open(url, '_blank');
-        }
+    var nome = document.getElementById("nome").value;
+    var email = document.getElementById("email").value;
+    var mensagem = document.getElementById("mensagem").value;
+    var numero = "5581987930949"; // Número de telefone pré-definido
+    var mensagemFormatada = "Nome: " + nome + "%0D%0A" + "Email: " + email + "%0D%0A" + "Mensagem: " + mensagem;
+    var url = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagemFormatada);
+    window.open(url, '_blank');
+}
+
     </script>
 
 
