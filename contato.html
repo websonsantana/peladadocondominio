@@ -1,186 +1,140 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato|Pelada Futebol Club</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #444;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: left;
-        }
-        nav {
-            background-color: #f0f0f0;
-            color: black;
-            width: 200px;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: -200px;
-            transition: left 0.3s ease;
-            padding-top: 60px;
-        }
-        nav.open {
-            left: 0;
-        }
-        nav a {
-            display: block;
-            color: black;
-            text-decoration: none;
-            padding: 10px;
-            border-bottom: 1px solid #fff;
-        }
-        nav img {
-            display: block;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-        section {
-            padding: 20px;
-            margin-left: 0px;
-            text-align: center;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        button {
-            background-color: #4CAF50; /* Verde grama */
-            color: white; /* Cor do texto branca */
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        button:hover {
-            background-color: #45a049; /* Um tom mais escuro quando o botão é passado o mouse */
-        }
-        @media screen and (max-width: px) {
-            nav {
-                left: -200px;
-            }
-            section {
-                margin-left: 0;
-            }
-            nav.open {
-                left: -200px;
-            }
-            button {
-                display: block;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendário com Miniaturas</title>
+<style>
+  .calendar {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .weekdays {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  .weekday {
+    width: calc(100% / 7);
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+  .month {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .days {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .day {
+    width: calc(100% / 7);
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    position: relative;
+  }
+  .day img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .day.zoom img {
+    transform: scale(1.5);
+  }
+</style>
 </head>
 <body>
-    
-    <header>
-        <button onclick="toggleMenu()">Menu</button>
-        <center>
-            <h1><b>Entre Contanto</b></h1>
-        </center>
-    </header>
-    
-    <nav id="sideNav" onclick="closeMenu()">
-        <img src="brasao.png" alt="Logo" width="90">
-        <center>Pelada Futebol Club</center>
-        <br>
-        <P>
-        <br>
-        <P>
-            
-        <a href="index.html" > Início</a>
-        <a href="financeiro.html">Financeiro</a>
-        <a href="destaque.html">Destaque</a>
-        <a href="artilheiro.html">Artilheiro</a>
-        <a href="goleiro.html">Goleiro</a>
-        <a href="bolamurcha.html">Bola Murcha</a>
-        <a href="rackinggols.html">Ranking de Gols</a>
-        <a href="Comprovantes.html">Comprovantes</a>
-        <a href="aleatorio.html">Gerador de Equipes</a>
-        <a href="contato.html">Contate-nos</a>
-        <a href="patrocinio.html">Patrocínio</a>
-	<img src="logo.png" alt="Logo" width="150" height="28">
-		
-            
-    </nav>
-    <section>
-        <center>
-     
-     <main>
-<center>
-        <h3>Para entrar em contato com a WS soluções Tecnolócias utilize umas das opções abaixo:</h3>
-        <strong>E-mail:</strong> ws.solucoes.tecnlogia@gmail.com
-<p>
-        <strong>Whatsapp:</strong> (81) 981521109 
-<p>
-        ou se preferir preencha o formulario abaixo e entraremos em contato</h3>
-</center>
-</main>
-<center>
-    <h2>Envie uma mensagem </h2>
-	    <form id="whatsappForm">
-        <label for="nome">Nome Completo:</label><br>
-        <input type="text" id="nome" name="nome" required><br><br>
-        <label for="email">E-mail:</label><br>
-        <input type="email" id="email" name="email"><br><br>
-        <label for="mensagem">Mensagem:</label><br>
-        <textarea id="mensagem" rows="4" cols="40"></textarea><br><br>
-        <input type="submit" value="Enviar">
-    </form>
-</center>
-    <script>
-        document.getElementById("whatsappForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
-            enviarMensagem();
+
+<div class="calendar">
+  <ul class="weekdays">
+    <li class="weekday">Domingo</li>
+    <li class="weekday">Segunda</li>
+    <li class="weekday">Terça</li>
+    <li class="weekday">Quarta</li>
+    <li class="weekday">Quinta</li>
+    <li class="weekday">Sexta</li>
+    <li class="weekday">Sábado</li>
+  </ul>
+  <div class="month">
+    <select id="selectMonth">
+      <option value="1">Janeiro</option>
+      <option value="2">Fevereiro</option>
+      <option value="3">Março</option>
+      <!-- Adicione os outros meses aqui -->
+    </select>
+    <select id="selectYear">
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <!-- Adicione os outros anos aqui -->
+    </select>
+  </div>
+  <ul class="days"></ul>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const selectMonth = document.getElementById('selectMonth');
+    const selectYear = document.getElementById('selectYear');
+    const daysList = document.querySelector('.days');
+
+    // Função para atualizar os dias do calendário com miniaturas
+    function updateCalendar(month, year) {
+      // Limpar dias anteriores
+      daysList.innerHTML = '';
+
+      const daysInMonth = new Date(year, month, 0).getDate();
+
+      // Adicionar dias ao calendário
+      for (let i = 1; i <= daysInMonth; i++) {
+        const dayElement = document.createElement('li');
+        dayElement.classList.add('day');
+        dayElement.textContent = i;
+
+        // Adicionar evento de clique para o zoom
+        dayElement.addEventListener('click', function() {
+          if (dayElement.classList.contains('zoom')) {
+            dayElement.classList.remove('zoom');
+          } else {
+            document.querySelectorAll('.day').forEach(day => day.classList.remove('zoom'));
+            dayElement.classList.add('zoom');
+          }
         });
 
-            function enviarMensagem() {
-            var nome = document.getElementById("nome").value;
-            var email = document.getElementById("email").value;
-            var mensagem = document.getElementById("mensagem").value;
-            var numero = "81981521109"; // Número de telefone pré-definido
-            var mensagemFormatada = "Nome: " + nome + "%0a" + "Email: " + email + "%0a" + "Mensagem: " + mensagem;
-            var url = "https://api.whatsapp.com/send?phone="numero+ "&text=" + encodeURIComponent(mensagemFormatada);
-            window.open(url, '_blank');
-        }
-    </script>
+        daysList.appendChild(dayElement);
+      }
+    }
 
+    // Atualizar calendário inicialmente
+    updateCalendar(selectMonth.value, selectYear.value);
 
-    <center>
-    </section>
-    <footer>
-        <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
-    </footer>
+    // Adicionar eventos de mudança para os seletores de mês e ano
+    selectMonth.addEventListener('change', function() {
+      updateCalendar(selectMonth.value, selectYear.value);
+    });
 
-    <script>
-        function toggleMenu() {
-            var nav = document.getElementById('sideNav');
-            nav.classList.toggle('open');
-        }
+    selectYear.addEventListener('change', function() {
+      updateCalendar(selectMonth.value, selectYear.value);
+    });
+  });
+</script>
 
-        function closeMenu() {
-            var nav = document.getElementById('sideNav');
-            if (nav.classList.contains('open')) {
-                nav.classList.remove('open');
-            }
-        }
-    </script>
 </body>
 </html>
