@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Equipes</title>
+    <title>Contato|Pelada Futebol Club</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,7 +55,6 @@
             padding: 20px;
             text-align: center;
         }
-        /* Estilo para os botões */
         button {
             background-color: #4CAF50; /* Verde grama */
             color: white; /* Cor do texto branca */
@@ -73,6 +72,20 @@
         button:hover {
             background-color: #45a049; /* Um tom mais escuro quando o botão é passado o mouse */
         }
+        @media screen and (max-width: px) {
+            nav {
+                left: -200px;
+            }
+            section {
+                margin-left: 0;
+            }
+            nav.open {
+                left: -200px;
+            }
+            button {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
@@ -80,134 +93,237 @@
     <header>
         <button onclick="toggleMenu()">Menu</button>
         <center>
-             <h2>Gerador de Equipes e Grupos Aleatórios</h2>
+            
+            <h1><b>Entre contato Conosco</b></h1>
         </center>
     </header>
     
     <nav id="sideNav" onclick="closeMenu()">
         <img src="brasao.png" alt="Logo" width="90">
-        <center><b>Pelada Futebol Club</b></center>
-        
+        <center>Pelada Futebol Club</center>
         <br>
         <P>
-            <a href="index.html" > Início</a>
-            <a href="financeiro.html">Financeiro</a>
-            <a href="destaque.html">Destaque</a>
-            <a href="artilheiro.html">Artilheiro</a>
-            <a href="goleiro.html">Goleiro</a>
-            <a href="bolamurcha.html">Bola Murcha</a>
-            <a href="rackinggols.html">Ranking de Gols</a>
-            <a href="Comprovantes.html">Comprovantes</a>
-            <a href="aleatorio.html">Gerador de Time</a>
-	    <a href="contato.html">Contate-nos</a>
-            <a href="patrocinio.html">Patrocínio</a>
-            <img src="logo.png" alt="Logo" width="150" height="28">
-        </nav>
-        <section>
+        <br>
+        <P>
             
-            <label for="leaderList">Líderes de Equipe (separados por vírgulas):</label><br>
-            <textarea id="leaderList" rows="2" cols="40"></textarea><br>
-            <label for="participantList">Membros da Equipe (separados por vírgulas):</label><br>
-            <textarea id="participantList" rows="4" cols="40"></textarea><br>
-            <label for="numTeams">Número de Equipes:</label>
-            <input type="number" id="numTeams" min="1" value="2"><br>
-            <label for="numGroups">Número de Grupos por Equipe:</label>
-            <input type="number" id="numGroups" min="1" value="2"><br>
-            <button onclick="generateTeams()">Gerar Equipes</button>
-            <button onclick="clearFields()">Limpar</button><br><br>
-            <div id="result"></div>
-        </section>
-        <footer>
-            <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
-        </footer>
-    <br>
-    <p>
-    <p>
-    <center>
-    <img src="logo.png" alt="Logo" width="200">
-    </center>
-    </p>
-        <script>
-            function toggleMenu() {
-                var nav = document.getElementById('sideNav');
-                nav.classList.toggle('open');
-            }
+        <a href="index.html" > Início</a>
+        <a href="financeiro.html">Financeiro</a>
+        <a href="destaque.html">Destaque</a>
+        <a href="artilheiro.html">Artilheiro</a>
+        <a href="goleiro.html">Goleiro</a>
+        <a href="bolamurcha.html">Bola Murcha</a>
+        <a href="rackinggols.html">Ranking de Gols</a>
+        <a href="Comprovantes.html">Comprovantes</a>
+        <a href="aleatorio.html">Gerador de Equipes</a>
+        <a href="contato.html">Contate-nos</a>
+        <a href="patrocinio.html">Patrocínio</a>
+		<img src="logo.png" alt="Logo" width="150" height="28">
+		
+            
+    </nav>
+	<h2>Jogador Presente:</h2>
+        <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 2">
+        <img src="brivaldo.jpg" alt="BRENDO MATEUS" height="25px" >   BRENDO MATEUS
+    </label>
+    <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 1">
+        <img src="brivaldo.jpg" alt="BRIVALDO RAMOS" height="25px">   BRIVALDO RAMOS
+    </label>
+	<br>
+    <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 2">
+        <img src="emanoel.jpg" alt="EMMANUELL ROBERTO" height="25px">   EMMANUELL ROBERTO
+    </label>
+	<label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 1">
+        <img src="lazaro.jpg" alt="EVILAZARO SERGIO" height="25px">   EVILAZARO SERGIO
+    </label>
+	<br>
+    <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 2">
+        <img src="felipe.jpg" alt="Membro 2" height="25px">   FELIPE DOUGLAS
+    </label>
+	<label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 1">
+        <img src="cleiton.jpg" alt="Membro 1" height="25px">   GENICLEITON RAMOS
+    </label>
+	<br>
+    <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 2">
+        <img src="guilherme.jpg" alt="Membro 2"height="25px">  GUILHERME ANDRE
+    </label>
+	<label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 1">
+        <img src="jeferson.jpg" alt="Membro 1"height="25px">  JEFERSSON HENRIQUE
+    </label>
+	<br>
+    <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 2">
+        <img src="joao.jpg" alt="Membro 2"height="25px">  JOAO PAULO 
+    </label>
+	<label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 1">
+        <img src="ramos.jpg" alt="Membro 1"height="25px">  JOSE RAMOS
+    </label>
+	<br>
+    <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 2">
+        <img src="laercio.jpg" alt="Membro 2"height="25px">  LAERCIO JOSE
+    </label>
+	<label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 1">
+        <img src="campelo.jpg" alt="Membro 1"height="25px">  LUIZ CAMPELO
+    </label>
+	<br>
+    <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 2">
+        <img src="manoel.jpg" alt="Membro 2"height="25px">   MANOEL JOSE
+    </label>
+	<label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 1">
+        <img src="marcos.jpg" alt="Membro 1"height="25px">   MARCOS ANTONIO
+    </label>
+	<br>
+    <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 2">
+        <img src="mateus.jpg" alt="Membro 2"height="25px">   MATHEUS SILVA
+    </label>
+	<label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 1">
+        <img src="paulo.jpg" alt="Membro 1"height="25px">  PAULO ROBERTO
+    </label>
+	<br>
+    <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 2">
+        <img src="pedro.jpg" alt="Membro 2"height="25px">  PEDRO VICTOR
+    </label>
+	<label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 1">
+        <img src="rafael.jpg" alt="Membro 1"height="25px">   RAFAEL JOSE
+    </label>
+	<br>
+    <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 2">
+        <img src="ricardo.jpg" alt="Membro 2"height="25px">  RICARDO VIEIRA
+    </label>
+	<label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 1">
+        <img src="ronaldo.jpg" alt="Membro 1"height="25px">  RONALDO HERMINIO
+    </label>
+	<br>
+    <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 2">
+        <img src="sirva.jpg" alt="Membro 2"height="25px">   SEVERINO MARIANO
+    </label>
+	<label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 1">
+        <img src="tairon.jpg" alt="Membro 1"height="25px">  TAIRON LUIZ 
+    </label>
+	<br>
+    <label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 2">
+        <img src="webson.jpg" alt="Membro 2"height="25px">  WEBSON JOSE
+    </label>
+	<label>
+        <input type="checkbox" class="membroCheckbox" value="Membro 1">
+        <img src="will.jpg" alt="Membro 1"height="25px">  WILLAMS FRANCISCO
+    </label>
+	<br>
+    <h2>Goleiro:</h2>
+    <label>
+        <input type="checkbox" class="liderCheckbox" value="Líder 1">
+        <img src="ramos.jpg" alt="Líder 1"height="25px">  JOSE RAMOS
+    </label>
+    <label>
+        <input type="checkbox" class="liderCheckbox" value="Líder 2">
+        <img src="manoel.jpg" alt="Líder 2"height="25px"> MANOEL JOSE
+    </label>
+	<br>
+	<label>
+        <input type="checkbox" class="liderCheckbox" value="Líder 3">
+        <img src="ronaldo.jpg" alt="Líder 3"height="25px"> RONALDO HERMINIO
+    </label>
+    
 
-            function closeMenu() {
-                var nav = document.getElementById('sideNav');
-                if (nav.classList.contains('open')) {
-                    nav.classList.remove('open');
+    <h2>Membros por Equipe:</h2>
+	
+    <input type="number" id="numMembrosPorEquipe" min="1" value="2"><br>
+<br>
+    <button onclick="gerarEquipes()">Gerar Equipes</button>
+
+    <h2>Resultado:</h2>
+    <div id="resultado"></div>
+
+    <script>
+        function gerarEquipes() {
+            var membrosPresentes = [];
+            var lideresPresentes = [];
+            var numMembrosPorEquipe = parseInt(document.getElementById("numMembrosPorEquipe").value);
+
+            // Obter membros presentes
+            var membrosCheckboxes = document.querySelectorAll('.membroCheckbox');
+            membrosCheckboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    membrosPresentes.push(checkbox.value);
                 }
-            }
-			
-			function generateTeams() {
-                var leaderList = document.getElementById("leaderList").value;
-                var participantList = document.getElementById("participantList").value;
-                var numTeams = parseInt(document.getElementById("numTeams").value);
-                var numGroups = parseInt(document.getElementById("numGroups").value);
-                var leaders = leaderList.split(",").map(function(item) {
-                    return item.trim();
-                }).filter(function(item) {
-                    return item !== "";
+            });
+
+            // Obter líderes presentes
+            var lideresCheckboxes = document.querySelectorAll('.liderCheckbox');
+            lideresCheckboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    lideresPresentes.push(checkbox.value);
+                }
+            });
+
+            // Lógica para formar equipes aleatórias com os membros presentes e líderes presentes
+            var equipes = [];
+            var numEquipes = lideresPresentes.length;
+            for (var i = 0; i < numEquipes; i++) {
+                var equipe = [];
+                equipe.push(lideresPresentes[i]); // Adicionar líder à equipe
+                var membrosRestantes = membrosPresentes.filter(function(membro) {
+                    return membro !== lideresPresentes[i];
                 });
-                var participants = participantList.split(",").map(function(item) {
-                    return item.trim();
-                }).filter(function(item) {
-                    return item !== "";
+                for (var j = 0; j < numMembrosPorEquipe - 1; j++) {
+                    var randomIndex = Math.floor(Math.random() * membrosRestantes.length);
+                    equipe.push(membrosRestantes.splice(randomIndex, 1)[0]);
+                }
+                equipes.push(equipe);
+            }
+
+            // Exibir o resultado
+            var resultadoHTML = "";
+            equipes.forEach(function(equipe, index) {
+                resultadoHTML += "<p><strong>Equipe " + (index + 1) + ":</strong><br>";
+                equipe.forEach(function(membro, index) {
+                    resultadoHTML += "Membro " + (index + 1) + ": " + membro + "<br>";
                 });
+                resultadoHTML += "</p>";
+            });
 
-                var teams = [];
-                for (var i = 0; i < numTeams; i++) {
-                    teams.push([]);
-                }
+            document.getElementById("resultado").innerHTML = resultadoHTML;
+        }
+    </script>
+</body>
+    
+    <footer>
+        <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
+    </footer>
 
-                // Distribui os líderes de equipe
-                for (var j = 0; j < leaders.length; j++) {
-                    teams[j % numTeams].push(leaders[j] + " (Líder)");
-                }
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('sideNav');
+            nav.classList.toggle('open');
+        }
 
-                // Completa as equipes com participantes restantes
-                var remainingParticipants = shuffle(participants.slice()); // cria uma cópia embaralhada de participants
-                for (var k = 0; k < teams.length; k++) {
-                    while (teams[k].length < numGroups) {
-                        if (remainingParticipants.length === 0) break;
-                        teams[k].push(remainingParticipants.pop());
-                    }
-                }
-
-                var resultHTML = "";
-                for (var l = 0; l < teams.length; l++) {
-                    resultHTML += "<h3>Equipe " + (l + 1) + ":</h3>";
-                    for (var m = 0; m < numGroups; m++) {
-                        resultHTML += "<p>Grupo " + (m + 1) + ": " + teams[l][m] + "</p>";
-                    }
-                }
-
-                document.getElementById("result").innerHTML = resultHTML;
+        function closeMenu() {
+            var nav = document.getElementById('sideNav');
+            if (nav.classList.contains('open')) {
+                nav.classList.remove('open');
             }
-
-            function shuffle(array) {
-                var currentIndex = array.length, temporaryValue, randomIndex;
-
-                while (0 !== currentIndex) {
-                    randomIndex = Math.floor(Math.random() * currentIndex);
-                    currentIndex -= 1;
-
-                    temporaryValue = array[currentIndex];
-                    array[currentIndex] = array[randomIndex];
-                    array[randomIndex] = temporaryValue;
-                }
-
-                return array;
-            }
-
-            function clearFields() {
-                document.getElementById("leaderList").value = "";
-                document.getElementById("participantList").value = "";
-                document.getElementById("numTeams").value = "2";
-                document.getElementById("numGroups").value = "2";
-                document.getElementById("result").innerHTML = "";
-            }
-        </script>
+        }
+    </script>
 </body>
 </html>
