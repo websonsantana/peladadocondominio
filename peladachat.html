@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .chat-container {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .chat-header {
+            background-color: #075e54;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .chat-messages {
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+        .message {
+            padding: 5px 10px;
+            margin: 5px 0;
+        }
+        .message.sent {
+            background-color: #dcf8c6;
+            border-radius: 10px;
+            text-align: right;
+        }
+        .message.received {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        .message-input {
+            width: calc(100% - 20px);
+            padding: 5px 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+        }
+        .send-button {
+            background-color: #075e54;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+		<img src="brasao.png" alt="Logo" width="30"> <br>
+		            Pelada chat
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- Aqui serão adicionadas as mensagens -->
+        </div>
+        <input type="text" id="username-input" placeholder="Digite seu nome...">
+        <input type="text" class="message-input" id="message-input" placeholder="Digite sua mensagem..." disabled>
+        <button class="send-button" id="send-button" onclick="sendMessage()" disabled>Enviar</button>
+    </div>
+
+    <script>
+        var username = "";
+        var colors = ['#FF5733', '#33FF5F', '#337AFF', '#9C33FF', '#FF33DD', '#33E7FF', '#FFE333'];
+        var userColor = '';
+
+        function getRandomColor() {
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function setUsername() {
+            var usernameInput = document.getElementById("username-input");
+            var messageInput = document.getElementById("message-input");
+            var sendButton = document.getElementById("send-button");
+
+            username = usernameInput.value.trim();
+            if (username !== "") {
+                userColor = getRandomColor();
+                usernameInput.disabled = true;
+                messageInput.disabled = false;
+                sendButton.disabled = false;
+                messageInput.focus();
+            }
+        }
+
+        function sendMessage() {
+            var messageInput = document.getElementById("message-input");
+            var messageText = messageInput.value.trim();
+            if (messageText !== "") {
+                var chatMessages = document.getElementById("chat-messages");
+                var messageDiv = document.createElement("div");
+                messageDiv.className = "message sent";
+                messageDiv.textContent = messageText;
+                messageDiv.style.backgroundColor = userColor;
+                chatMessages.appendChild(messageDiv);
+                messageInput.value = "";
+                messageInput.focus();
+            }
+        }
+    </script>
+</body>
+</html>
