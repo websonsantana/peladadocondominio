@@ -26,18 +26,19 @@
             padding: 10px;
         }
         .message {
+            border-radius: 10px;
             padding: 5px 10px;
             margin: 5px 0;
         }
         .message.sent {
             background-color: #dcf8c6;
-            border-radius: 10px;
             text-align: right;
         }
         .message.received {
-            border: 1px solid #ccc;
-            background-color: #fff;
-            border-radius: 10px;
+            background-color: #e1ffc7;
+        }
+        .message-text {
+            color: black; /* cor padrão para o texto da mensagem */
         }
         .message-input {
             width: calc(100% - 20px);
@@ -57,55 +58,73 @@
     </style>
 </head>
 <body>
-    <div class="chat-container">
+    <div class="chat-container" id="chat-container">
         <div class="chat-header">
-		<img src="brasao.png" alt="Logo" width="30"> <br>
-		            Pelada chat
+            Pelada chat
         </div>
-        <div class="chat-messages" id="chat-messages">
+        <div id="user-name-form">
+            <p>Informe seu nome para acessar o chat:</p>
+            <input type="text" id="user-name-input" placeholder="Seu nome..." onkeydown="enterChat(event)">
+        </div>
+        <div class="chat-messages" id="chat-messages" style="display: none;">
             <!-- Aqui serão adicionadas as mensagens -->
         </div>
-        <input type="text" id="username-input" placeholder="Digite seu nome...">
-        <input type="text" class="message-input" id="message-input" placeholder="Digite sua mensagem..." disabled>
-        <button class="send-button" id="send-button" onclick="sendMessage()" disabled>Enviar</button>
+        <input type="text" class="message-input" id="message-input" placeholder="Digite sua mensagem..." style="display: none;">
+        <button class="send-button" id="send-button" onclick="sendMessage()" style="display: none;">Enviar</button>
     </div>
 
     <script>
-        var username = "";
-        var colors = ['#FF5733', '#33FF5F', '#337AFF', '#9C33FF', '#FF33DD', '#33E7FF', '#FFE333'];
-        var userColor = '';
-
         function getRandomColor() {
-            return colors[Math.floor(Math.random() * colors.length)];
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
         }
 
-        function setUsername() {
-            var usernameInput = document.getElementById("username-input");
-            var messageInput = document.getElementById("message-input");
-            var sendButton = document.getElementById("send-button");
+        function enterChat(event) {
+            if (event.key === "Enter") {
+                var userNameInput = document.getElementById("user-name-input");
+                var userName = userNameInput.value.trim();
+                if (userName !== "") {
+                    var userNameForm = document.getElementById("user-name-form");
+                    var chatContainer = document.getElementById("chat-container");
+                    var chatMessages = document.getElementById("chat-messages");
+                    var messageInput = document.getElementById("message-input");
+                    var sendButton = document.getElementById("send-button");
 
-            username = usernameInput.value.trim();
-            if (username !== "") {
-                userColor = getRandomColor();
-                usernameInput.disabled = true;
-                messageInput.disabled = false;
-                sendButton.disabled = false;
-                messageInput.focus();
+                    // Esconder o formulário de entrada e mostrar o chat
+                    userNameForm.style.display = "none";
+                    chatMessages.style.display = "block";
+                    messageInput.style.display = "block";
+                    sendButton.style.display = "block";
+
+                    // Armazenar o nome do usuário na sessão
+                    sessionStorage.setItem("userName", userName);
+                }
             }
         }
 
         function sendMessage() {
             var messageInput = document.getElementById("message-input");
             var messageText = messageInput.value.trim();
+            var userName = sessionStorage.getItem("userName");
+
             if (messageText !== "") {
                 var chatMessages = document.getElementById("chat-messages");
                 var messageDiv = document.createElement("div");
                 messageDiv.className = "message sent";
-                messageDiv.textContent = messageText;
-                messageDiv.style.backgroundColor = userColor;
+                var userNameSpan = document.createElement("span");
+                userNameSpan.textContent = userName + ": ";
+                userNameSpan.style.color = getRandomColor(); // Definir cor aleatória para o nome do usuário
+                var messageTextSpan = document.createElement("span");
+                messageTextSpan.textContent = messageText;
+                messageTextSpan.className = "message-text";
+                messageDiv.appendChild(userNameSpan);
+                messageDiv.appendChild(messageTextSpan);
                 chatMessages.appendChild(messageDiv);
                 messageInput.value = "";
-                messageInput.focus();
             }
         }
     </script>
