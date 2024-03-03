@@ -127,6 +127,39 @@
                 messageInput.value = "";
             }
         }
+		
+		const express = require('express');
+const http = require('http');
+const socketIo = require('socket.io');
+
+const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
+
+// Configuração do servidor WebSocket
+io.on('connection', (socket) => {
+    console.log('Novo usuário conectado');
+
+    socket.on('message', (message) => {
+        console.log('Mensagem recebida:', message);
+        io.emit('message', message); // Envie a mensagem para todos os clientes conectados
+    });
+
+    socket.on('disconnect', () => {
+        console.log('Usuário desconectado');
+    });
+});
+
+// Configuração do servidor HTTP
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html'); // Servir o arquivo HTML para o cliente
+});
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Servidor WebSocket rodando na porta ${PORT}`);
+});
+
     </script>
 </body>
 </html>
