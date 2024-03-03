@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabela de Pagamentos</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+    .pago {
+        background-color: #8BC34A;
+    }
+    .nao-pago {
+        background-color: #FF5722;
+    }
+</style>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th>Foto</th>
+            <th>Nome</th>
+            <th>Status de Pagamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+		
+            <td><img src="pedro.jpg" alt="Foto 1" width="50"></td>
+            <td>PEDRO VICTOR DE SOUZA ATANÁZIO</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="paulo.jpg" alt="Foto 2" width="50"></td>
+            <td>PAULO ROBERTO DOS SANTOS</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+		<td><img src="marcos.jpg" alt="Foto 1" width="50"></td>
+            <td>MARCOS ANTONIO MACIEL DA COSTA</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="webson.JPG" alt="Foto 2" width="50"></td>
+            <td>WEBSON JOSE ALBUQUERQUE DE SANTANA</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+		<td><img src="will.jpg" alt="Foto 1" width="50"></td>
+            <td>WILLAMS FRANCISCO DA SILVA</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="cleiton.jpg" alt="Foto 2" width="50"></td>
+            <td>GENICLEITON RAMOS DA SILVA</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+		<td><img src="BRENDO.jpg" alt="Foto 1" width="50"></td>
+            <td>BRENDO MATEUS RAMOS FERREIRA</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="SIRVA.jpg" alt="Foto 2" width="50"></td>
+            <td>SEVERINO MARIANO INÁCIO FILHO</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+		<td><img src="RICARDO.jpg" alt="Foto 1" width="50"></td>
+            <td>RICARDO VIEIRA DE CARVALHO</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="BRIVALDO.jpg" alt="Foto 2" width="50"></td>
+            <td>BRIVALDO RAMOS FERREIRA FILHO</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+		<td><img src="GUILHERME.jpg" alt="Foto 1" width="50"></td>
+            <td>GUILHERME ANDRE MONTEIRO DA SILVA LIMA</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="ronaldo.jpg" alt="Foto 2" width="50"></td>
+            <td>RONALDO HERMINIO DE LIMA</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+		</tr>
+		<td><img src="rafael.jpg" alt="Foto 1" width="50"></td>
+            <td>RAFAEL JOSE LIMA DE SANTANA</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="manoel.jpg" alt="Foto 2" width="50"></td>
+            <td>MANOEL JOSE DA SILVA</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+		</tr>
+		<td><img src="lazaro.jpg" alt="Foto 1" width="50"></td>
+            <td>EVILAZARO SERGIO ALVES</td>
+            <td>
+                <input type="checkbox" onclick="changeStatus(this)">
+                <span class="status-text"></span>
+            </td>
+        </tr>
+          <br>
+		  <br>
+		  <p>
+		  <br>      
+        <!-- Adicione mais linhas conforme necessário -->
+    </tbody>
+</table>
+
+<script>
+    function changeStatus(checkbox) {
+        var row = checkbox.parentNode.parentNode;
+        var statusText = row.querySelector(".status-text");
+        if (checkbox.checked) {
+            row.classList.remove("nao-pago");
+            row.classList.add("pago");
+            statusText.textContent = "Pago";
+        } else {
+            row.classList.remove("pago");
+            row.classList.add("nao-pago");
+            statusText.textContent = "Pagamento não realizado";
+        }
+    }
+</script>
+
+</body>
+</html>
