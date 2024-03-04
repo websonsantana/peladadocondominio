@@ -86,6 +86,11 @@
                 display: block;
             }
         }
+		
+		a {
+          text-decoration: none; /* remove o sublinhado */
+          color: black; /* define a cor do texto como preto */
+          }
     </style>
 </head>
 <body>
@@ -93,13 +98,16 @@
     <header>
         <button onclick="toggleMenu()">☰</button>
         <center>
-            <img src="brasao.png" alt="Logo" width="100">
-            <h1><b>Pelada Futebol Club</b></h1>
+            <img src="brasao.png" alt="Logo" width="80">
+            <h2><b>Pelada Futebol Club</b></h2>
+			<div class="saldo">
+            <h5>Saldo  <span id="saldo-valor"> R$    100,00  </span> <span class="toggle-eye" onclick="toggleSaldo()">👁️‍🗨️</span></h5>
+        </div>
         </center>
     </header>
     
     <nav id="sideNav" onclick="closeMenu()">
-        <img src="brasao.png" alt="Logo" width="90">
+        <img src="brasao.png" alt="Logo" width="50">
         <center>Pelada Futebol Club</center>
         <br>
         <a href="index.html" > Início</a>
@@ -116,22 +124,77 @@
             
     </nav>
     <section>
-        <center>
-           <table>
-           <tbody>
-            <tr>
-           <td><button onclick="window.location.href='novoartilheiro.html'">Artilheiro </button></td>
-	   <td><button onclick="window.location.href= 'destaque.html'">Destaque do Mês</button></td> 
-		    <tr>
-		    </tr>
-	   <td><button onclick="window.location.href='bolamurcha.html'">Bola Murcha</button></td>
-	   <td><button onclick="window.location.href='goleiro.htm'">Melhor Goleiro</button></td>
-	   <td><button onclick="window.location.href='aleatorio.html'">Gerador de Equipes</button></td>	   
-           </tr>
-             
-        </tbody>
-    </table>
-    <center>
+        <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box {
+            
+            border: 2px 
+			solid black;
+            position: relative;
+        }
+        .symbols {
+            position: absolute;
+            top: 10;
+            right: 10;
+        }
+        .title {
+            position: absolute;
+            bottom: 22;
+            width: 100%;
+            text-align: center;
+        }
+		
+		.box {
+        width: 100%;
+        padding: 0px;
+        box-sizing: border-box;
+       }
+	   .box1 {
+        margin: 5px;
+		width: 100%;
+        height: 70px;
+		border: 2px 
+		solid black;
+       }
+    </style>
+</head>
+<body>
+
+    <div class="box1"style="background-color:#aaa;">
+        <div class="symbols"><img src="bola.png" alt="Logo" height="38"></div>
+		<br>
+		<center>  <a href="artilheiro.html" > Artilheiro</a> </center>
+    </div>
+	<tr>
+	<div class="box1"style="background-color:#aaa;">
+        <div class="symbols"><img src="destaque2.png" alt="Logo" height="38"></div>
+		<br>
+        <center>  <a href="destaque.html" > Destaque</a> </center> 
+</div>
+    </div>
+	<tr>
+	<div class="box1" style="background-color:#aaa;">
+        <div class="symbols"><img src="bolamurcha.png" alt="Logo" height="28"></div>
+		<br>
+        <center>  <a href="bolamurcha.html" > Bola Murcha</a> </center>
+    </div>
+	<tr>
+	<div class="box1" style="background-color:#aaa;">
+        <div class="symbols"><img src="goleiro.png" alt="Logo" height="39"></div>
+		<br>
+        <center>  <a href="goleiro.html" > Melhor Goleiro</a> </center>
+    </div>
+	<tr>
+	<div class="box1" style="background-color:#aaa;">
+        <div class="symbols"><img src="aleatorio.png" alt="Logo" height="39"></div>
+		<br>
+        <center>  <a href="aleatorio.html" > Gerador de Equipes</a> </center>
+    </div>
+</body>
+</html>
+
     </section>
     <footer>
         <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
@@ -153,6 +216,16 @@
             var nav = document.getElementById('sideNav');
             if (nav.classList.contains('open')) {
                 nav.classList.remove('open');
+            }
+        }
+    </script>
+	<script>
+        function toggleSaldo() {
+            var saldo = document.getElementById("saldo-valor");
+            if (saldo.style.visibility === "hidden") {
+                saldo.style.visibility = "visible";
+            } else {
+                saldo.style.visibility = "hidden";
             }
         }
     </script>
