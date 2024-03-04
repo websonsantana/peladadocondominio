@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelada Futebol Club</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #444;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: left;
+        }
+        nav {
+            background-color: #f0f0f0;
+            color: black;
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: -200px;
+            transition: left 0.3s ease;
+            padding-top: 60px;
+        }
+        nav.open {
+            left: 0;
+        }
+        nav a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+        nav img {
+            display: block;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        section {
+            padding: 20px;
+            margin-left: 0px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 4px;
+            text-align: center;
+        }
+        button {
+            background-color: #444; /* Verde grama */
+            color: white; /* Cor do texto branca */
+            border: none;
+            padding: 3px 6px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 1px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Um tom mais escuro quando o botão é passado o mouse */
+        }
+        @media screen and (max-width: px) {
+            nav {
+                left: -200px;
+            }
+            section {
+                margin-left: 0;
+            }
+            nav.open {
+                left: -200px;
+            }
+            button {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <button onclick="toggleMenu()">☰</button>
+        <center>
+             <h1><b>Melhor Artilheiro</b></h1>
+			<button onclick="window.location.href=''">Jan</button>
+			<button onclick="window.location.href='rackinggols.html'">Fev</button>
+			<button onclick="window.location.href='Mar.html'">Mar</button>
+			<button onclick="window.location.href=''">Abr</button>
+			<button onclick="window.location.href=''">Mai</button>
+			<button onclick="window.location.href=''">Jun</button>
+			<br>
+			<button onclick="window.location.href=''">Jul</button>
+			<button onclick="window.location.href=''">Ago</button>
+			<button onclick="window.location.href=''">Set</button>
+			<button onclick="window.location.href=''">Out</button>
+			<button onclick="window.location.href=''">Nov</button>
+			<button onclick="window.location.href=''">Dez</button>
+        </center>
+		
+    </header>
+    
+    <nav id="sideNav" onclick="closeMenu()">
+        <img src="brasao.png" alt="Logo" width="90">
+        <center>Pelada Futebol Club</center>
+        <br>
+        <a href="index.html" > Início</a>
+        <a href="financeiro.html">Financeiro</a>
+        <a href="artilheiro.html">Artilheiro</a>
+        <a href="goleiro.html">Goleiro</a>
+        <a href="bolamurcha.html">Bola Murcha</a>
+        <a href="rackinggols.html">Ranking de Gols</a>
+        <a href="aleatorio.html">Gerador de Equipes</a>
+        <a href="contato.html">Contate-nos</a>
+        <a href="patrocinio.html">Patrocínio</a>
+	<a href="PRESTACAODECONTAS.HTML">Check Pagamentos</a>
+        <img src="logo.png" alt="Logo" width="150" height="28">
+            
+    </nav>
+    <section>
+      <title>Ranking de Jogadores</title>
+	    <style>
+		
+		
+		
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #logo {
+            width: 200px;
+            height: 200px;
+        }
+		
+		img {
+		 border-radius: 50%; /* Adiciona bordas arredondadas */
+		 
+		 .blue-text {
+            color: #000;
+        }
+        body {
+            background-color: #fff;
+            color: white; /* Adicionado para definir a cor do texto como branco */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+        }
+
+        header {
+		    background-color: #ffffff;
+            text-align: left;
+			margin-left: 30px;
+            padding: 30px;
+            color: #000;
+			
+        }
+
+
+	    {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+			
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+			fixed: 10px
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #555;
+    </style>
+</head>
+<body>
+      	
+</nav>
+    <table>
+           <body>
+            <tr>
+			<td><h1>🥇</h1></td>
+                <td><img src="brivaldo.jpg" alt="logo" width="70px" height="70px"></td>
+                <td>BRIVALDO RAMOS FERREIRA FILHO</td>
+				<td>04 Gols 
+				<p>
+				⚽⚽⚽⚽
+                <p>				
+                Domingo 04.02.2024</td>
+           </tr>
+            <tr>
+                <td><h1>🥇</h1></td>
+                <td><img src="ricardo.jpg" alt="logo" width="70px" height="70px"></td>
+                <td>RICARDO VIEIRA DE CARVALHO</td>
+				<td> 05 Gols
+				<p>
+				⚽⚽⚽⚽⚽
+				<p>
+				Domingo 11.02.2024</td>
+            </tr>
+            <tr>
+
+                <td><h1>🥇</h1></td>
+                <td><img src="cleiton.jpg" alt="logo" width="70px" height="70px"></td>
+                <td>GENICLEITON RAMOS LIMA</td>
+				<td>3 Gols
+				<p>
+				⚽⚽⚽
+				<p>
+				Domingo 18.02.2024</td>
+				</tr>
+            <tr>
+                <td><h1>🥇</h1></td>
+                <td><img src="ricardo.jpg" alt="logo" width="70px" height="70px"><img src="emanoel.jpg" alt="logo" width="70px" height="70px"></td>
+                <td>RICARDO VIEIRA DE CARVALHO  <p>  EMMANUELL ROBERTO PAIVA MENDES TEIXEIRA</td>
+				<td>05 Gols 
+				<p>
+				⚽⚽⚽⚽⚽
+				<p>
+				Domingo 25.02.2024</td>
+	    </tr>
+            <tr>
+                <td><h1>🥇</h1></td>
+                <td><img src="brendo.jpg" alt="logo" width="70px" height="70px"></td>
+                <td>BRENDO MATEUS RAMOS FERREIRA </td>
+				<td>04 Gols 
+				<p>
+				⚽⚽⚽⚽
+				<p>
+				Domingo 03.03.2024</td>
+        </tbody>
+    </table>
+    </section>
+    <footer>
+        <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
+    </footer>
+	    <br>
+	    <p>
+		    <p>
+		    <center>
+<img src="logo.png" alt="Logo" width="200" >
+			    </center>
+	    </p>
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('sideNav');
+            nav.classList.toggle('open');
+        }
+
+        function closeMenu() {
+            var nav = document.getElementById('sideNav');
+            if (nav.classList.contains('open')) {
+                nav.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>
