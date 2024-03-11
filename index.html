@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+<header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pelada Futebol Club</title>
+	<button onclick="toggleMenu()">☰</button>
+</header>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
+            font-family: Arial, sans-serif; 
+            margin: 50;
             padding: 50;
             background-color: #f0f0f0;
-            color: #444;
+            color: #fffwe;
         }
         header {
             background-color: #333;
             color: white;
-            padding: 20px;
+            padding: 10px;
             text-align: left;
         }
         nav {
@@ -26,8 +28,8 @@
             position: fixed;
             top: 0;
             left: -200px;
-            transition: left 0.3s ease;
-            padding-top: 60px;
+            transition: left 1.0s ease;
+            padding-top: 10px;
         }
         nav.open {
             left: 0;
@@ -36,21 +38,22 @@
             display: block;
             color: black;
             text-decoration: none;
-            padding: 10px;
-            border-bottom: 1px solid #fff;
+            padding: 5px;
+            border-bottom: 0px solid #fff;
+			text-align: left;
         }
         nav img {
             display: block;
             margin: 0 auto;
-            padding: 20px 0;
+            padding: 2px 0;
         }
         section {
             padding: 20px;
-            margin-left: 0px;
+            margin-left: px;
             text-align: center;
         }
         footer {
-            background-color: #333;
+            background-color:  #333;
             color: white;
             padding: 20px;
             text-align: center;
@@ -63,14 +66,15 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
+            font-size: 12px;
+            margin: 6px 3px;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 60px;
+			
         }
 
         button:hover {
-            background-color: #45a049; /* Um tom mais escuro quando o botão é passado o mouse */
+            background-color: #000; /* Um tom mais escuro quando o botão é passado o mouse */
         }
         @media screen and (max-width: px) {
             nav {
@@ -82,57 +86,14 @@
             nav.open {
                 left: -200px;
             }
-            button {
-                display: block;
-            }
+            
         }
 		
 		a {
-          text-decoration: none; /* remove o sublinhado */
-          color: black; /* define a cor do texto como preto */
+                text-decoration: none; /* remove o sublinhado */
+                color: black; /* define a cor do texto como preto */
           }
-    </style>
-</head>
-<body>
-    
-    <header>
-        <button onclick="toggleMenu()">☰</button>
-        <center>
-            <img src="brasao.png" alt="Logo" width="80">
-            <h2><b>Pelada Futebol Club</b></h2>
-			<div class="saldo">
-            <h5>Saldo  <span id="saldo-valor"> R$    00,00  </span> <span class="toggle-eye" onclick="toggleSaldo()">👁️‍🗨️</span></h5>
-        </div>
-        </center>
-    </header>
-    
-    <nav id="sideNav" onclick="closeMenu()">
-        <img src="brasao.png" alt="Logo" width="50">
-        <center>Pelada Futebol Club</center>
-        <br>
-        <a href="index.html" > Início</a>
-        <a href="financeiro.html">Financeiro</a>
-        <a href="gol.html">Artilheiro</a>
-        <a href="goleiro.html">Goleiro</a>
-        <a href="bolamurcha.html">Bola Murcha</a>
-        <a href="aleatorio.html">Gerador de Equipes</a>
-        <a href="contato.html">Contate-nos</a>
-        <a href="patrocinio.html">Patrocínio</a>
-	<a href="PRESTACAODECONTAS.HTML">Check Pagamentos</a>
-        <img src="logo.png" alt="Logo" width="150" height="28">
-            
-    </nav>
-    <section>
-        <!DOCTYPE html>
-<html>
-<head>
-    <style>
-        .box {
-            
-            border: 2px 
-			solid black;
-            position: relative;
-        }
+		
         .symbols {
             position: absolute;
             top: 10;
@@ -146,20 +107,51 @@
         }
 		
 		.box {
-        width: 100%;
-        padding: 0px;
-        box-sizing: border-box;
+            width: 100%;
+            padding: 0px;
+            box-sizing: border-box;
+			border: 2px 
+			solid black;
+            position: relative;
+			
        }
-	   .box1 {
-        margin: 5px;
-		width: 100%;
-        height: 70px;
-		border: 2px 
-		solid black;
-       }
+	    .box1 {
+            margin: 5px;
+		    width:100%;
+            height: 70px;
+		    border: 3px 
+		    solid black;
+			}
     </style>
-</head>
-<body>
+    <body>
+    <center>
+			<br>
+			<img src="brasao.png" alt="Logo" width="80">
+            <h2><b>Pelada Futebol Club</b></h2>
+			
+    </center>
+            
+    
+        <nav id="sideNav" onclick="closeMenu()">
+		<br>
+		<br>
+		<br>
+		<br>
+        <img src="brasao.png" alt="Logo" width="50">
+        <center>Pelada Futebol Club</center>
+        <br>
+        <a href="index.html" > Início</a>
+        <a href="financeiro.html">Financeiro</a>
+        <a href="gol.html">Artilheiro</a>
+        <a href="goleiro.html">Goleiro</a>
+        <a href="bolamurcha.html">Bola Murcha</a>
+        <a href="aleatorio.html">Gerador de Equipes</a>
+        <a href="contato.html">Contate-nos</a>
+        <a href="patrocinio.html">Patrocínio</a>
+	    <center><img src="logo.png" alt="Logo" width="150"></center>  
+        </nav>
+    <section>
+ <body>
 
     <div class="box1"style="background-color:#aaa;">
 	    <div class="symbols"><img src="artilheiro2.png" alt="Logo" height="38"></div>
@@ -200,12 +192,11 @@
         <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
     </footer>
 	    <br>
-	    <p>
-		    <p>
-		    <center>
-<img src="logo.png" alt="Logo" width="200" >
-			    </center>
-	    </p>
+	    
+    <center>
+        <img src="logo.png" alt="Logo" width="200" >
+    </center>
+	    
     <script>
         function toggleMenu() {
             var nav = document.getElementById('sideNav');
@@ -218,16 +209,7 @@
                 nav.classList.remove('open');
             }
         }
-    </script>
-	<script>
-        function toggleSaldo() {
-            var saldo = document.getElementById("saldo-valor");
-            if (saldo.style.visibility === "hidden") {
-                saldo.style.visibility = "visible";
-            } else {
-                saldo.style.visibility = "hidden";
-            }
-        }
+
     </script>
 </body>
 </html>
