@@ -21,31 +21,32 @@
             text-align: left;
         }
         nav {
-            background-color: #f0f0f0;
-            color: black;
+            background-color: #333;
+            color: white;
             width: 200px;
             height: 100%;
             position: fixed;
             top: 0;
             left: -200px;
-            transition: left 1.0s ease;
-            padding-top: 10px;
-        }
+            transition: left 0.5s ease;
+            padding-top: 60px;
+            z-index: 100;
+        }	
         nav.open {
             left: 0;
         }
-        nav a {
+         nav a {
             display: block;
-            color: black;
+            color: white;
             text-decoration: none;
             padding: 5px;
-            border-bottom: 0px solid #fff;
-			text-align: left;
+            border-bottom: 1px solid #555;
+            text-align: left;
         }
         nav img {
             display: block;
             margin: 0 auto;
-            padding: 2px 0;
+            padding: 0px 0;
         }
         section {
             padding: 20px;
@@ -121,7 +122,34 @@
             height: 70px;
 		    border: 3px 
 		    solid black;
+			border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+			transition: transform 0.3s ease;
+			box-sizing: border-box;
 			}
+			
+			.box1:hover {
+            transform: scale(0.85);
+        }
+		.box1 img {
+            margin-right: 10px;
+        }
+		@media screen and (max-width: 768px) {
+            nav {
+                left: -200px;
+            }
+
+            nav.open {
+                left: 0;
+            }
+
+            section {
+                margin-left: 0;
+            }
+        button.menu-btn:hover {
+            color: #ccc;
+        }
     </style>
     <body>
     <center>
@@ -139,6 +167,7 @@
 		<br>
         <img src="brasao.png" alt="Logo" width="50">
         <center>Pelada Futebol Club</center>
+		<br>
         <br>
         <a href="index.html" > Início</a>
         <a href="financeiro.html">Financeiro</a>
@@ -148,39 +177,42 @@
         <a href="aleatorio.html">Gerador de Equipes</a>
         <a href="contato.html">Contate-nos</a>
         <a href="patrocinio.html">Patrocínio</a>
+		<br>
+		<br>
+		<br>
 	    <center><img src="logo.png" alt="Logo" width="150"></center>  
         </nav>
     <section>
  <body>
 
     <div class="box1"style="background-color:#aaa;">
-	    <div class="symbols"><img src="artilheiro2.png" alt="Logo" height="38"></div>
-        <div class="symbols"></div>
+	    <div class=""><img src="artilheiro2.png" alt="Logo" height="38"></div>
+        <div class=""></div>
 		<br>
 		<center>  <a href="gol.html" > <H3>ARTILHEIRO</H3></a> </center>
     </div>
 	<tr>
 	<div class="box1"style="background-color:#aaa;">
-        <div class="symbols"><img src="destaque2.png" alt="Logo" height="38"></div>
+        <div class=""><img src="destaque2.png" alt="Logo" height="38"></div>
 		<br>
         <center>  <a href="destaque.html" > <H3>DESTAQUE</H3></a> </center> 
 </div>
     </div>
 	<tr>
 	<div class="box1" style="background-color:#aaa;">
-        <div class="symbols"><img src="bolamurcha.png" alt="Logo" height="28"></div>
+        <div class=""><img src="bolamurcha.png" alt="Logo" height="28"></div>
 		<br>
         <center>  <a href="bolamurcha.html" > <H3>BOLA MURCHA</H3></a> </center>
     </div>
 	<tr>
 	<div class="box1" style="background-color:#aaa;">
-        <div class="symbols"><img src="goleiro.png" alt="Logo" height="39"></div>
+        <div class=""><img src="goleiro.png" alt="Logo" height="39"></div>
 		<br>
         <center>  <a href="goleiro.html" > <H3>MELHOR GOLEIRO</H3></a> </center>
     </div>
 	<tr>
 	<div class="box1" style="background-color:#aaa;">
-        <div class="symbols"><img src="aleatorio.png" alt="Logo" height="39"></div>
+        <div class=""><img src="aleatorio.png" alt="Logo" height="39"></div>
 		<br>
         <center>  <a href="aleatorio.html" > <H3>GERADOR DE EQUIPES</H3></a> </center>
     </div>
