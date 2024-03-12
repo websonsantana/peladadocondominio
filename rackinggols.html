@@ -1,125 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+<header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pelada Futebol Club</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #444;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: left;
-        }
-        nav {
-            background-color: #f0f0f0;
-            color: black;
-            width: 200px;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: -200px;
-            transition: left 0.3s ease;
-            padding-top: 60px;
-        }
-        nav.open {
-            left: 0;
-        }
-        nav a {
-            display: block;
-            color: black;
-            text-decoration: none;
-            padding: 10px;
-            border-bottom: 1px solid #fff;
-        }
-        nav img {
-            display: block;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-        section {
-            padding: 20px;
-            margin-left: 0px;
-            text-align: center;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        button {
-            background-color: #444; /* Verde grama */
-            color: white; /* Cor do texto branca */
-            border: none;
-            padding: 1px 2px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 21px;
-            margin: 2px 2px;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        button:hover {
-            background-color: #45a049; /* Um tom mais escuro quando o botão é passado o mouse */
-        }
-        @media screen and (max-width: px) {
-            nav {
-                left: -200px;
-            }
-            section {
-                margin-left: 0;
-            }
-            nav.open {
-                left: -200px;
-            }
-            button {
-                display: block;
-            }
-        }
-
-        /* Adicionando espaçamento entre as colunas da tabela */
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        th, td {
-            padding: 8px; /* Espaçamento interno */
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        tr:hover {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
-    
-    <header>
-        <button onclick="toggleMenu()">☰</button>
-        <center>
-        <h1><b>Artilheiro de Fevereiro</b></h1>
-	 <tr>
-                <td><H1>🥇Vencedor🥇</h1></td>
+    <button onclick="toggleMenu()">☰</button>
+	 <center><h2><b>Artilheiro de Fevereiro</b></h2></center>
+ 	 <tr>
+                <center><td><H1>🥇Vencedor🥇</h1></td>
 		 <br>
-                <td><img src="ricardo.jpg" alt="Medalha"" width="91px" height="91px"></td>
+                <td><img src="ricardo.jpg" alt="Medalha"" width="91px" height="91px"style="border-radius: 50%;"></td>
 			<br>
+			<p>
                 <td>   RICARDO VIEIRA DE CARVALHO </td>
 		 <br>
 		<td>12 Gols <br>⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽</p></td>
 	            </tr>
-		        <button onclick="window.location.href=''">Jan</button>
+				</center>
+</header>
+<center>
+<button onclick="window.location.href=''">Jan</button>
 			<button onclick="window.location.href='rackinggols.html'">Fev</button>
 			<button onclick="window.location.href='golsmarco.html'">Mar</button>
 			<button onclick="window.location.href=''">Abr</button>
@@ -133,204 +32,272 @@
 			<button onclick="window.location.href=''">Nov</button>
 			<button onclick="window.location.href=''">Dez</button>
         </center>
-        </header>
-    
-    <nav id="sideNav" onclick="closeMenu()">
-        <img src="brasao.png" alt="Logo" width="90">
-        <center>Pelada Futebol Club</center>
-        <br>
-        <P>
-        <br>
-        <P>
+    <style>
+	     
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 50;
+            padding: 50;
+            background-color: #f0f0f0;
+            color: #fffwe;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: -200px;
+            transition: left 0.5s ease;
+            padding-top: 60px;
+            z-index: 100;
+        }	
+        nav.open {
+            left: 0;
+        }
+         nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 5px;
+            border-bottom: 1px solid #555;
+            text-align: left;
+        }
+        nav img {
+            display: block;
+            margin: 0 auto;
+            padding: 0px 0;
+        }
+        section {
+            padding: 40px;
+            margin-left: 400 px;
+            text-align: left;
+		}
+        footer {
+            background-color:  #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            background-color: #444; /* Verde grama */
+            color: white; /* Cor do texto branca */
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 2px 1px;
+            cursor: pointer;
+            border-radius: 70px;
+			
+        }
+
+        button:hover {
+            background-color: #000; /* Um tom mais escuro quando o botão é passado o mouse */
+        }
+        @media screen and (max-width: px) {
+            nav {
+                left: -200px;
+            }
             
+            nav.open {
+                left: -200px;
+            }
+            
+        }
+		
+		a {
+                text-decoration: none; /* remove o sublinhado */
+                color: black; /* define a cor do texto como preto */
+          }
+		
+        .symbols {
+            position: absolute;
+            top: 10;
+            right: 10;
+        }
+        .title {
+            position: absolute;
+            bottom: 22;
+            width: 100%;
+            text-align: center;
+        }
+		
+		.box {
+            width: 100%;
+            padding: 0px;
+            box-sizing: border-box;
+			border: 2px 
+			solid black;
+            position: relative;
+			
+       }
+	    .box1 {
+            margin: 5px;
+		    width:100%;
+            height: 70px;
+		    border: 3px 
+		    solid black;
+			border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+			transition: transform 0.3s ease;
+			box-sizing: border-box;
+			}
+			
+			.box1:hover {
+            transform: scale(0.85);
+        }
+		.box1 img {
+            margin-right: 10px;
+        }
+		@media screen and (max-width: 768px) {
+            nav {
+                left: -200px;
+            }
+
+            nav.open {
+                left: 0;
+            }
+
+            
+        button.menu-btn:hover {
+            color: #ccc;
+        }
+		#logo {
+            width: 200px;
+            height: 200px;
+		}	
+			img1{
+			border-radius: 50%;
+        }
+    </style>
+    <body>
+    <center>
+			<br>
+	
+    </center>
+           
+    
+        <nav id="sideNav" onclick="closeMenu()">
+		<br>
+		<br>
+		<br>
+		<br>
+        <img src="brasao.png" alt="Logo" width="50">
+        <center>Pelada Futebol Club</center>
+		<br>
+        <br>
         <a href="index.html" > Início</a>
         <a href="financeiro.html">Financeiro</a>
-        <a href="destaque.html">Destaque</a>
-        <a href="rackinggols.html">Artilheiro</a>
+        <a href="gol.html">Artilheiro</a>
         <a href="goleiro.html">Goleiro</a>
         <a href="bolamurcha.html">Bola Murcha</a>
         <a href="aleatorio.html">Gerador de Equipes</a>
         <a href="contato.html">Contate-nos</a>
         <a href="patrocinio.html">Patrocínio</a>
-        <img src="logo.png" alt="Logo" width="150" height="28">
-            
-    </nav>
-    
+		<br>
+		<br>
+		<br>
+	    <center><img src="logo.png" alt="Logo" width="150"></center>  
+        </nav>
     <section>
-       <style>
-		
-		
-		
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        #logo {
-            width: 200px;
-            height: 200px;
-        }
-		
-		img {
-		 border-radius: 50%; /* Adiciona bordas arredondadas */
-		 
-		 
-		 .blue-text {
-            color: #000;
-        }
-        body {
-            background-color: #fff;
-            color: white; /* Adicionado para definir a cor do texto como branco */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 30px;
-        }
-
-        header {
-		    background-color: #ffffff;
-            text-align: left;
-			margin-left: 30px;
-            padding: 30px;
-            color: #000;
-			
-        }
-
-
-	    {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-			
-        }
-
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-			fixed: 10px
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            background-color: #555;
-
-
-		
-    </style>
-</head>
-<body>
-
-      	
-</nav>
-    <table>
-        <thead>
-            <tr>
-             
-				
-            </tr>
-        </thead>
-        <tbody>
-
-               
-                <tr>
-				<td>2°</td>
-				<td><img src="felipe.jpg" alt="logo" width="50px" height="50px"></td>
+        <table>
+         <tbody>
+		<td>2°</td>
+				<td><img src="felipe.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;"></td>
                 <td>🥈   FELIPE DOUGLAS TAVARES DE LIMA</td>
 				<td>08 gols <p>⚽⚽⚽⚽⚽⚽⚽⚽</p></td>
 				</tr>
+				<td colspan="4"><hr></td>
                 <tr>
 				<td>3°</td>
-                <<td><img src="lazaro.jpg" alt="logo" width="50px" height="50px"></td>
+                <<td><img src="lazaro.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;"></td>
                 <td>🥉   EVILAZARO SERGIO ALVES</td>
 				<td>07 gols <p>⚽⚽⚽⚽⚽⚽⚽</p></td>
                 </tr>
+				<td colspan="4"><hr></td>
                 <tr>		
                 <td>4°</td>
-				<td><img src="brivaldo.jpg" alt="logo" width="50px" height="50px"></td>
+				<td><img src="brivaldo.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;"></td>
                 <td>BRIVALDO RAMOS FERREIRA FILHO</td>
 				<td>06 gols <p>⚽⚽⚽⚽⚽⚽</p></td>
                 </tr>
+				<td colspan="4"><hr></td>
                 <tr>
 				<td>5°</td>
-                <td><img src="emanoel.jpg" alt="logo" width="50px" height="50px"></td>
+                <td><img src="emanoel.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;"></td>
                 <td>EMMANUELL ROBERTO PAIVA MENDES TEIXEIRA</td>
 				<td>05 Gols<p>⚽⚽⚽⚽⚽</p></td>
 		        </tr>
+				<td colspan="4"><hr></td>
                 <tr>
                 <td>6°</td>
-                <td><img src="ronaldo.jpg" alt="logo" width="50px" height="50px">
-		        <img src="cleiton.jpg" alt="logo" width="50px" height="50px"></td>
-                <td>RONALDO HERMINIO DE LIMA<p>GENICLEITON RAMOS LIMA</td>
-		<td>04 Gols<p>⚽⚽⚽⚽</p></td>
-		</tr>
+                <td>
+				<img src="ronaldo.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;">
+		        <img src="cleiton.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;">
+				</td>
+                <td>
+				RONALDO HERMINIO DE LIMA<p>
+				GENICLEITON RAMOS LIMA</td>
+		        <td>04 Gols<p>⚽⚽⚽⚽</p></td>
+		        </tr>
+		        <td colspan="4"><hr></td>
                 <tr>
-		<td>7°</td>
-                <td><img src="marcos.jpg" alt="logo" width="50px" height="50px">
-		    <img src="paulo.jpg" alt="logo" width="50px" height="50px">
-		    <img src="campelo.jpg" alt="logo" width="50px" height="50px"></td>
+		        <td>7°</td>
+                <td>
+				<img src="marcos.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;">
+		        <img src="paulo.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;">
+		        <img src="campelo.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;">
+				</td>
                 <td>MARCOS ANTONIO MACIEL DA COSTA<p>PAULO ROBERTO DOS SANTOS<p>LUIZ CAMPELO DA PAZ</td>
-		<td>03 Gols<p>⚽⚽⚽</p></td>
-		</tr>
+		        <td>03 Gols<p>⚽⚽⚽</p></td>
+		        </tr>
+				<td colspan="4"><hr></td>
                 <tr>
                 <td>8°</td>
-                     <td><img src="sirva.jpg" alt="logo" width="50px" height="50px"><img src="pedro.jpg" alt="logo" width="50px" height="50px"></td>
+                <td>
+				<img src="sirva.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;">
+				<img src="pedro.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;"></td>
                 <td>SEVERINO MARIANO INACIO FILHO<p>PEDRO ATANAZIO</td>
-		<td>02 Gols <p>⚽⚽</p></td>
-		</tr>
+		        <td>02 Gols <p>⚽⚽</p></td>
+		        </tr>
+				<td colspan="4"><hr></td>
                 <tr>
                 <td>9°</td>
-                <td><img src="rafael.jpg" alt="logo" width="50px" height="50px">
-		    <img src="will.jpg" alt="logo" width="50px" height="50px">
-		    <img src="webson.jpg" alt="logo" width="50px" height="50px">
-		    <img src="tairon.jpg" alt="logo" width="50px" height="50px"></td>
-                    <td>RAFAEL JOSE LIMA DE SANTANA<p>WILLAMS FRANCISCO DA SILVA<p>WEBSON JOSE ALBUQUERQUE DE SANTANA<p>TAIRON LUIZ DA SILVA ABREU</td>
-		    <td>01 Gols <p>⚽</p></td>
+                <td><img src="rafael.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;">
+		        <img src="will.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;">
+		        <img src="webson.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;">
+		        <img src="tairon.jpg" alt="logo" width="50px" height="50px"style="border-radius: 50%;"></td>
+                <td>RAFAEL JOSE LIMA DE SANTANA<p>
+				WILLAMS FRANCISCO DA SILVA<p>
+				WEBSON JOSE ALBUQUERQUE DE SANTANA<p>
+				TAIRON LUIZ DA SILVA ABREU</td>
+		        <td>01 Gols <p>⚽</p></td>
 		
 			
 				
         </body>
     </table>
     </section>
-    
-    <style>
-        /* Estilos para a caixa flutuante */
-        #saldo-em-caixa {
-            display: none; /* Inicialmente escondido */
-            position: fixed;
-            bottom: 300px;
-            right: 300px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 9999;
-        }
-    </style>
     <footer>
-        <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
+        <p><h5>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</h5></p>
     </footer>
-    <br>
-    <p>
-    <p>
+	    <br>
+	    
     <center>
-    <img src="logo.png" alt="Logo" width="200">
+        <img src="logo.png" alt="Logo" width="200" >
     </center>
-    </p>
+	    
     <script>
         function toggleMenu() {
             var nav = document.getElementById('sideNav');
@@ -343,6 +310,28 @@
                 nav.classList.remove('open');
             }
         }
+        function exibirSaldo() {
+                document.getElementById("saldo-em-caixa").style.display = "block";
+                // Aqui você pode adicionar lógica para buscar e exibir o saldo real em vez de um valor fixo
+            }
+
+        function fecharSaldo() {
+                document.getElementById("saldo-em-caixa").style.display = "none";
+            }
     </script>
+	 <style>
+        /* Estilos para a caixa flutuante */
+        #saldo-em-caixa {
+            display: none; /* Inicialmente escondido */
+            position: fixed;
+            bottom: 500px;
+            right: 200px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+    </style>
 </body>
 </html>
