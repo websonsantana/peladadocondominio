@@ -1,57 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+<header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOBRE A PELADA</title>
+    <title>Sobre</title>
+	<button onclick="toggleMenu()">☰</button>
+	 <center><h2><b>Sobre</b></h2></center>
+
+</header>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 21;
-            padding: 0;
+            font-family: Arial, sans-serif; 
+            margin: 50;
+            padding: 50;
             background-color: #f0f0f0;
-            color: #444;
-	    text-align: cente
+            color: #fffwe;
         }
         header {
             background-color: #333;
             color: white;
-            padding: 20px;
+            padding: 10px;
             text-align: left;
         }
         nav {
-            background-color: #f0f0f0;
-            color: black;
+            background-color: #333;
+            color: white;
             width: 200px;
             height: 100%;
             position: fixed;
             top: 0;
             left: -200px;
-            transition: left 0.3s ease;
+            transition: left 0.5s ease;
             padding-top: 60px;
-        }
+            z-index: 100;
+        }	
         nav.open {
             left: 0;
         }
-        nav a {
+         nav a {
             display: block;
-            color: black;
+            color: white;
             text-decoration: none;
-            padding: 10px;
-            border-bottom: 1px solid #fff;
+            padding: 5px;
+            border-bottom: 1px solid #555;
+            text-align: left;
         }
         nav img {
             display: block;
             margin: 0 auto;
-            padding: 20px 0;
+            padding: 0px 0;
         }
         section {
-            padding: 20px;
-            margin-left: 0px;
-            text-align: center;
-        }
+            padding: 40px;
+            margin-left: 400 px;
+            text-align: left;
+		}
         footer {
-            background-color: #333;
+            background-color:  #333;
             color: white;
             padding: 20px;
             text-align: center;
@@ -64,83 +69,119 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
+            font-size: 12px;
+            margin: 6px 3px;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 60px;
+			
         }
 
         button:hover {
-            background-color: #444; /* Um tom mais escuro quando o botão é passado o mouse */
+            background-color: #000; /* Um tom mais escuro quando o botão é passado o mouse */
         }
         @media screen and (max-width: px) {
             nav {
                 left: -200px;
             }
-            section {
-                margin-left: 0;
-            }
+            
             nav.open {
                 left: -200px;
             }
-            button {
-                display: block;
-            }
+            
         }
-
-        /* Adicionando espaçamento entre as colunas da tabela */
-        table {
-            border-collapse: collapse;
+		
+		a {
+                text-decoration: none; /* remove o sublinhado */
+                color: black; /* define a cor do texto como preto */
+          }
+		
+        .symbols {
+            position: absolute;
+            top: 10;
+            right: 10;
+        }
+        .title {
+            position: absolute;
+            bottom: 22;
             width: 100%;
+            text-align: center;
         }
-
-        th, td {
-            padding: 8px; /* Espaçamento interno */
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+		
+		.box {
+            width: 100%;
+            padding: 0px;
+            box-sizing: border-box;
+			border: 2px 
+			solid black;
+            position: relative;
+			
+       }
+	    .box1 {
+            margin: 5px;
+		    width:100%;
+            height: 70px;
+		    border: 3px 
+		    solid black;
+			border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+			transition: transform 0.3s ease;
+			box-sizing: border-box;
+			}
+			
+			.box1:hover {
+            transform: scale(0.85);
         }
+		.box1 img {
+            margin-right: 10px;
+        }
+		@media screen and (max-width: 768px) {
+            nav {
+                left: -200px;
+            }
 
-        tr:hover {
-            background-color: #f2f2f2;
+            nav.open {
+                left: 0;
+            }
+
+            
+        button.menu-btn:hover {
+            color: #ccc;
         }
     </style>
-</head>
-<body>
+    <body>
+    <center>
+			<br>
+			
+           
+			
+    </center>
+           
     
-    <header>
-        <button onclick="toggleMenu()">☰⚽</button>
-        <center>
-        <h1><b>Pelada futebol club</b></h1>
-        </center>
-        </header>
-    
-    <nav id="sideNav" onclick="closeMenu()">
-        <img src="brasao.png" alt="Logo" width="90">
+        <nav id="sideNav" onclick="closeMenu()">
+		<br>
+		<br>
+		<br>
+		<br>
+        <img src="brasao.png" alt="Logo" width="50">
         <center>Pelada Futebol Club</center>
+		<br>
         <br>
-        <P>
-        <br>
-        <P>
-            
         <a href="index.html" > Início</a>
         <a href="financeiro.html">Financeiro</a>
-        <a href="destaque.html">Destaque</a>
-        <a href="artilheiro.html">Artilheiro</a>
+        <a href="gol.html">Artilheiro</a>
         <a href="goleiro.html">Goleiro</a>
         <a href="bolamurcha.html">Bola Murcha</a>
-        <a href="rackinggols.html">Ranking de Gols</a>
-        <a href="Comprovantes.html">Comprovantes</a>
         <a href="aleatorio.html">Gerador de Equipes</a>
         <a href="contato.html">Contate-nos</a>
         <a href="patrocinio.html">Patrocínio</a>
-        <img src="logo.png" alt="Logo" width="150" height="28">
-            
-    </nav>
-    
-  
-	    <body>
-       
-	    <P> Pelada Futebol Club foi criada em 28 de janeiro de 2024 pelos moradores do Condomínio Porto do Cabo com o objetivo de unir pessoas e construir parcerias e amizades duradouras.</P>
+		<br>
+		<br>
+		<br>
+	    <center><img src="logo.png" alt="Logo" width="150"></center>  
+        </nav>
+    <section>
+       <P> Pelada Futebol Club foi criada em 28 de janeiro de 2024 pelos moradores do Condomínio Porto do Cabo com o objetivo de unir pessoas e construir parcerias e amizades duradouras.</P>
 	   <P>O evento ocorre todos os domingos às 07 da manhã, proporcionando um ambiente de diversão e camaradagem.</P> 
 	   <br>
            <P> Após os jogos, os participantes desfrutam de um banquete de café da manhã,seguido por um refrescante banho de piscina e muita conversa descontraída.</P> 
@@ -149,41 +190,24 @@
            <P>Além de promover a prática esportiva e fortalecer os laços comunitários, a Pelada Futebol Club se destaca como um espaço de inclusão e diversão para todas as idades e habilidades.</P>
 	   <P>A atmosfera descontraída e amigável durante os jogos incentiva a participação de todos, desde os jogadores mais experientes até os iniciantes.</P>
 	   <br>
-           <P>Os momentos após os jogos, com o banquete de café da manhã, oferecem uma oportunidade única para os participantes compartilharem histórias, experiências e risadas, </P>
-	   <P>criando memórias que perdurarão por muito tempo. </P>
+           <P>Os momentos após os jogos, com o banquete de café da manhã, oferecem uma oportunidade única para os participantes compartilharem histórias, experiências e risadas, 
+	   criando memórias que perdurarão por muito tempo. </P>
 	   <br>
 	   <P> O banho de piscina após as partidas não apenas refresca os jogadores, mas também proporciona um ambiente relaxante para continuar as conversas e fortalecer os laços de amizade.</P>
 	   <br>
            <P>Além disso, a Pelada Futebol Club funciona como um ponto de encontro regular para os moradores do Condomínio Porto do Cabo, permitindo que eles se conectem além das fronteiras de suas residências.</P> 
 	   <P>Essa iniciativa não apenas promove um estilo de vida ativo e saudável, mas também enriquece a comunidade local, estimulando a colaboração e a solidariedade entre os residentes</P>
 	          
-        </body>
-    
-    
-    <style>
-        /* Estilos para a caixa flutuante */
-        #saldo-em-caixa {
-            display: none; /* Inicialmente escondido */
-            position: fixed;
-            bottom: 300px;
-            right: 300px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 9999;
-        }
-    </style>
+    </section>
     <footer>
-        <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
+        <p><h5>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</h5></p>
     </footer>
-    <br>
-    <p>
-    <p>
+	    <br>
+	    
     <center>
-    <img src="logo.png" alt="Logo" width="200">
+        <img src="logo.png" alt="Logo" width="200" >
     </center>
-    </p>
+	    
     <script>
         function toggleMenu() {
             var nav = document.getElementById('sideNav');
@@ -196,6 +220,28 @@
                 nav.classList.remove('open');
             }
         }
+        function exibirSaldo() {
+                document.getElementById("saldo-em-caixa").style.display = "block";
+                // Aqui você pode adicionar lógica para buscar e exibir o saldo real em vez de um valor fixo
+            }
+
+        function fecharSaldo() {
+                document.getElementById("saldo-em-caixa").style.display = "none";
+            }
     </script>
+	 <style>
+        /* Estilos para a caixa flutuante */
+        #saldo-em-caixa {
+            display: none; /* Inicialmente escondido */
+            position: fixed;
+            bottom: 500px;
+            right: 200px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+    </style>
 </body>
 </html>
