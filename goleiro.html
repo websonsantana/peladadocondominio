@@ -1,56 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+<header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patrocínio</title>
+    <title>Goleiro</title>
+	<button onclick="toggleMenu()">☰</button>
+	 <center><h2><b>Goleiro do ano</b></h2></center>
+
+</header>
+
     <style>
+	     
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif; 
+            margin: 50;
+            padding: 50;
             background-color: #f0f0f0;
-            color: #444;
+            color: #fffwe;
         }
         header {
             background-color: #333;
             color: white;
-            padding: 20px;
+            padding: 10px;
             text-align: left;
         }
         nav {
-            background-color: #f0f0f0;
-            color: black;
+            background-color: #333;
+            color: white;
             width: 200px;
             height: 100%;
             position: fixed;
             top: 0;
             left: -200px;
-            transition: left 0.3s ease;
-            padding-top: 60px;
-        }
+            transition: left 0.5s ease;
+            padding-top: 27px;
+            z-index: 100;
+        }	
         nav.open {
             left: 0;
         }
-        nav a {
+         nav a {
             display: block;
-            color: black;
+            color: white;
             text-decoration: none;
-            padding: 10px;
-            border-bottom: 1px solid #fff;
+            padding: 5px;
+            border-bottom: 1px solid #555;
+            text-align: left;
         }
         nav img {
             display: block;
             margin: 0 auto;
-            padding: 20px 0;
+            padding: 0px 0;
         }
         section {
-            padding: 20px;
-            margin-left: 0px;
-            text-align: center;
-        }
+            padding: 27px;
+            margin-left: 270 px;
+            text-align: left;
+		}
         footer {
-            background-color: #333;
+            background-color:  #333;
             color: white;
             padding: 20px;
             text-align: center;
@@ -63,210 +71,243 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
+            font-size: 12px;
+            margin: 1px 1px;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 70px;
+			
         }
 
         button:hover {
-            background-color: #45a049; /* Um tom mais escuro quando o botão é passado o mouse */
+            background-color: #000; /* Um tom mais escuro quando o botão é passado o mouse */
         }
         @media screen and (max-width: px) {
             nav {
                 left: -200px;
             }
-            section {
-                margin-left: 0;
-            }
+            
             nav.open {
                 left: -200px;
             }
-            button {
-                display: block;
-            }
+            
         }
-
-        /* Adicionando espaçamento entre as colunas da tabela */
-        table {
-            border-collapse: collapse;
+		
+		a {
+                text-decoration: none; /* remove o sublinhado */
+                color: black; /* define a cor do texto como preto */
+          }
+		
+        .symbols {
+            position: absolute;
+            top: 10;
+            right: 10;
+        }
+        .title {
+            position: absolute;
+            bottom: 22;
             width: 100%;
+            text-align: center;
         }
-
-        th, td {
-            padding: 8px; /* Espaçamento interno */
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+		
+		.box {
+            width: 100%;
+            padding: 0px;
+            box-sizing: border-box;
+			border: 2px 
+			solid black;
+            position: relative;
+			
+       }
+	    .box1 {
+            margin: 5px;
+		    width:100%;
+            height: 70px;
+		    border: 3px 
+		    solid black;
+			border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+			transition: transform 0.3s ease;
+			box-sizing: border-box;
+			}
+			
+			.box1:hover {
+            transform: scale(0.85);
         }
+		.box1 img {
+            margin-right: 10px;
+        }
+		@media screen and (max-width: 768px) {
+            nav {
+                left: -200px;
+            }
 
-        tr:hover {
-            background-color: #f2f2f2;
+            nav.open {
+                left: 0;
+            }
+
+            
+        button.menu-btn:hover {
+            color: #ccc;
+        }
+		#logo {
+            width: 200px;
+            height: 200px;
+		}	
+			img1{
+			border-radius: 50%;
         }
     </style>
-</head>
-<body>
+    <body>
+    <center>
+			<br>
+	
+    </center>
+           
     
-    <header>
-        <button onclick="toggleMenu()">☰</button>
-        <center>
-        <h1><b>Melhor goleiro da pelada</b></h1>
-        </center>
-        </header>
-    
-    <nav id="sideNav" onclick="closeMenu()">
-        <img src="brasao.png" alt="Logo" width="90">
+        <nav id="sideNav" onclick="closeMenu()">
+		<br>
+		<br>
+		<br>
+		<br>
+        <img src="brasao.png" alt="Logo" width="50">
         <center>Pelada Futebol Club</center>
+		<br>
         <br>
-        <P>
-        <br>
-        <P>
-            
         <a href="index.html" > Início</a>
         <a href="financeiro.html">Financeiro</a>
-        <a href="destaque.html">Destaque</a>
-        <a href="artilheiro.html">Artilheiro</a>
-        <a href="goleiro.html">Goleiro</a>
+        <a href="gol.html">Artilheiro</a>
+        <a href="goleiro2.html">goleiro</a>
         <a href="bolamurcha.html">Bola Murcha</a>
-        <a href="rackinggols.html">Ranking de Gols</a>
-        <a href="Comprovantes.html">Comprovantes</a>
         <a href="aleatorio.html">Gerador de Equipes</a>
         <a href="contato.html">Contate-nos</a>
         <a href="patrocinio.html">Patrocínio</a>
-        <img src="logo.png" alt="Logo" width="150" height="28">
-            
-    </nav>
-    
+		<br>
+		<br>
+		<br>
+	    <center><img src="logo.png" alt="Logo" width="150"></center>  
+        </nav>
     <section>
-        <style>
-		
-		
-		
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        #logo {
-            width: 200px;
-            height: 200px;
-        }
-		
-		img {
-		 border-radius: 50%; /* Adiciona bordas arredondadas */
-		 
-		 .blue-text {
-            color: #000;
-        }
-        body {
-            background-color: #fff;
-            color: white; /* Adicionado para definir a cor do texto como branco */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 30px;
-        }
-
-        header {
-		    background-color: #ffffff;
-            text-align: left;
-			margin-left: 30px;
-            padding: 30px;
-            color: #000;
-			
-        }
-
-
-	    {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-			
-        }
-
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-			fixed: 10px
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            background-color: #555;
-    </style>
-</head>
-<body>
-
-</nav>
+	<table>
+	<td> <h2>Pelada 25/02/24</h2></td>
+	</table>
+	<td colspan="4"><hr></td>
+	<br>
+	<br>
+	<table>
+    <thead>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1°</td>
+    <td>
+    <img src="manoel.jpg" alt="Medalha" width="50px" height="50px" style="border-radius: 50%;">
+    </td>
+    <td> MANOEL JOSE DA SILVA </td>
+    <td> 04 Vitorias<p>
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	</td>
+    </tr>
+	</table>
+    <td colspan="4"><hr></td>
+	<table>
+    <tr>
+    <td>2°</td>
+    <td>
+    <img src="ramos.jpg" alt="logo" width="50px" height="50px" style="border-radius: 50%;">
+    </td>
+    <td>JOSE RAMOS DA SILVA</td>
+    <td>03 Vitorias <p>
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	</td>
+    </tr>
+	</table>
+    <td colspan="4"><hr></td>
     <table>
-        <thead>
-            <tr>
-             
-				
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><h1>🥇</h1></td>
-                <td><img src="manoel.jpg" alt="logo" width="90px" height="90px"></td>
-                <td>MANOEL JOSE DA SILVA</td>
-		    </tr>
-            <tr>
-                <td><h1>🥈</h1></td>
-                <td><img src="ramos.jpg" alt="logo" width="90px" height="90px"></td>
-                <td>JOSE RAMOS DA SILVA</td>
-				
-           </tr>
-            <tr>
-                <td><h1>🥉</h1></td>
-                <td><img src="ronaldo.jpg" alt="logo" width="90px" height="90px"></td>
-                <td>RONALDO HERMNIO DE LIMA</td>
-				
-				
-        </tbody>
+    <tr>
+    <td>3°</td>
+    <td>
+    <img src="ronaldo.jpg" alt="logo" width="50px" height="50px" style="border-radius: 50%;">
+    </td>
+    <td>RONALDO HERMNIO DE LIMA</td>
+    <td>02 Vitorias <p>
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	</td>
+    </tr>
+	</table>
+    <table>
+	<td> <h2>Pelada 03/03/24</h2></td>
+	</table>
+	<td colspan="4"><hr></td>
+	<br>
+	<br>
+	<thead>
+    </thead>
+	</table>
+	<table>
+	<tr>
+    <td>1°</td>
+    <td>
+    <img src="manoel.jpg" alt="Medalha" width="50px" height="50px" style="border-radius: 50%;">
+    </td>
+    <td> MANOEL JOSE DA SILVA </td>
+    <td> 04 Vitorias <p>
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	</td>
+	</tr>
+	</table>
+<td colspan="4"><hr></td>
+<table>
+<tr>
+<td>2°</td>
+    <td>
+        <img src="sirva.jpg" alt="logo" width="50px" height="50px" style="border-radius: 50%;">
+    </td>
+    <td>SEVERINO MARIANO INACIO FILHO</td>
+    <td>03 Vitorias <p>
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	</td>
+	</tr>
     </table>
-	<script type="text/javascript"> var infolinks_pid = 3415425; var infolinks_wsid = 0; </script> 
-	<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+	<td colspan="4"><hr></td>
+	<table>
+    <tr>
+    <td>3°</td>
+    <td>
+        <img src="will.jpg" alt="logo" width="50px" height="50px" style="border-radius: 50%;">
+    </td>
+    <td>WILLAMS FRANCISCO DA SILVA</td>
+    <td>02 Vitorias <p>
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	<img src="goleiro2.png" alt="Medalha" width="40px" height="20px" style="border-radius: 50%;">
+	</td>
+	</tr>
+    </table>
+	<br>
+	<tbody>
+  
     </section>
-    
-    <style>
-        /* Estilos para a caixa flutuante */
-        #saldo-em-caixa {
-            display: none; /* Inicialmente escondido */
-            position: fixed;
-            bottom: 300px;
-            right: 300px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 9999;
-        }
-    </style>
+	
     <footer>
-        <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
+        <p><h5>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</h5></p>
     </footer>
-    <br>
-    <p>
-    <p>
+	    <br>
+	    
     <center>
-    <img src="logo.png" alt="Logo" width="200">
+        <img src="logo.png" alt="Logo" width="100" >
     </center>
-    </p>
+	    
     <script>
         function toggleMenu() {
             var nav = document.getElementById('sideNav');
@@ -278,7 +319,21 @@
             if (nav.classList.contains('open')) {
                 nav.classList.remove('open');
             }
-        }
+       
     </script>
+	 <style>
+        /* Estilos para a caixa flutuante */
+        #saldo-em-caixa {
+            display: none; /* Inicialmente escondido */
+            position: fixed;
+            bottom: 500px;
+            right: 200px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+    </style>
 </body>
 </html>
