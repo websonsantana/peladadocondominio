@@ -183,7 +183,69 @@
 	    <center><img src="logo.png" alt="Logo" width="150"></center>  
         </nav>
     <section>
-	<center><h1>Em desenvolvimento</h1></center>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+    <style>
+        #reader {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        #results {
+            border: 1px solid #ddd;
+            padding: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        #results p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Leitor de Código QR</h1>
+    <div id="reader"></div>
+    <div id="results">
+        <p><strong>Registros:</strong></p>
+    </div>
+
+    <script>
+        Quagga.init({
+            inputStream : {
+                name : "Live",
+                type : "LiveStream",
+                target: document.querySelector('#reader'),
+                constraints: {
+                    facingMode: "environment"
+                }
+            },
+            decoder : {
+                readers : ["code_128_reader", "ean_reader", "ean_8_reader", "code_39_reader", "code_39_vin_reader", "codabar_reader", "upc_reader", "upc_e_reader", "i2of5_reader"]
+            }
+        }, function(err) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+            console.log("Quagga initialized successfully.");
+
+            Quagga.onDetected(function(result) {
+                var code = result.codeResult.code;
+                var datetime = new Date().toLocaleString();
+                var entry = "Data/Hora: " + datetime + ", Código: " + code;
+                var resultsDiv = document.getElementById("results");
+                var p = document.createElement("p");
+                p.textContent = entry;
+                resultsDiv.appendChild(p);
+            });
+
+            Quagga.start();
+        });
+    </script>
+</body>	<center><h1>Em desenvolvimento</h1></center>
  <center><img src="jogandobola.gif" alt="Logo" width="150"></center>
     </section>
     <footer>
