@@ -240,8 +240,8 @@
         </a>
     </div>
 
-    <button class="prev" onclick="changeSlide(-1)">Anterior</button>
-    <button class="next" onclick="changeSlide(1)">Próximo</button>
+    <button class="prev" onclick="changeSlide(-1)"><h2><</h2></button>
+    <button class="next" onclick="changeSlide(1)"><h2>></h2></button>
 </div>
 
 <script>
@@ -355,7 +355,7 @@
     }
 var slideIndex = 1;
     showSlide(slideIndex);
-    var slideInterval = setInterval(autoSlide, 3000); // Intervalo de 3 segundos
+    var slideInterval = setInterval(autoSlide, 4000); // Intervalo de 3 segundos
 
     function autoSlide() {
         slideIndex++;
@@ -366,7 +366,7 @@ var slideIndex = 1;
         clearInterval(slideInterval); // Limpa o intervalo atual
         slideIndex += n;
         showSlide(slideIndex);
-        slideInterval = setInterval(autoSlide, 3000); // Inicia um novo intervalo
+        slideInterval = setInterval(autoSlide, 4000); // Inicia um novo intervalo
     }
 
     function showSlide(n) {
