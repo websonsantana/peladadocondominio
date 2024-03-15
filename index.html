@@ -227,9 +227,18 @@
     }
 var slideIndex = 1;
     showSlide(slideIndex);
+    var slideInterval = setInterval(autoSlide, 3000); // Intervalo de 3 segundos
+
+    function autoSlide() {
+        slideIndex++;
+        showSlide(slideIndex);
+    }
 
     function changeSlide(n) {
-        showSlide(slideIndex += n);
+        clearInterval(slideInterval); // Limpa o intervalo atual
+        slideIndex += n;
+        showSlide(slideIndex);
+        slideInterval = setInterval(autoSlide, 3000); // Inicia um novo intervalo
     }
 
     function showSlide(n) {
@@ -249,6 +258,7 @@ var slideIndex = 1;
 
         slides[slideIndex - 1].style.display = "block";
     }
+
 </script>
 </body>
 </html>
