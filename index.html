@@ -16,7 +16,7 @@
         header {
             background-color: #333;
             color: white;
-            padding: 10px;
+            padding: 5px;
             text-align: left;
             position: relative;
         }
@@ -30,7 +30,7 @@
             text-decoration: none;
             display: inline-block;
             font-size: 12px;
-            margin: 6px 3px;
+            margin: 6px 200px;
             cursor: pointer;
             border-radius: 60px;
         }
@@ -46,6 +46,7 @@
             transition: left 0.5s ease;
             padding-top: 60px;
             z-index: 100;
+			
         }
 
         nav.open {
@@ -59,6 +60,7 @@
             padding: 5px;
             border-bottom: 1px solid #555;
             text-align: left;
+			
         }
 
         nav img {
@@ -82,6 +84,8 @@
             text-align: center;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			opacity: 0,1
+			transition: opacity 0.3s ease;
         }
 
         .box .icon {
@@ -152,7 +156,7 @@
 </head>
 <body>
 <header>
-    <button id="menuToggle" onclick="toggleMenu()">☰</button>
+   <button id="menuToggle" onclick="toggleMenu()">☰</button>
 	    <center>
 	<img src="brasao.png" alt="Logo" width="80">
     <h2><b>Pelada Futebol Club</b></h2>
@@ -161,7 +165,7 @@
 <br>
 <style>
         .slideshow-container {
-            max-width: 500px;
+            max-width: 83%;
             position: relative;
             margin: auto;
         }
@@ -175,6 +179,7 @@
             width: 100%;
             height: auto;
             cursor: pointer;
+			border-radius: 10px;
         }
 
         .slide-description {
@@ -188,6 +193,7 @@
             box-sizing: border-box;
             opacity: 0;
             transition: opacity 0.3s ease;
+			border-radius: 10px;
         }
 
         .slide:hover .slide-description {
@@ -240,45 +246,12 @@
         </a>
     </div>
 
-    <button class="prev" onclick="changeSlide(-1)"><h2><</h2></button>
-    <button class="next" onclick="changeSlide(1)"><h2>></h2></button>
+    <button class="prev" onclick="changeSlide(-1)"><</button>
+    <button class="next" onclick="changeSlide(1)">></button>
 </div>
 
-<script>
-    var slideIndex = 1;
-    showSlide(slideIndex);
-    var slideInterval = setInterval(autoSlide, 3000); // Intervalo de 3 segundos
 
-    function autoSlide() {
-        slideIndex++;
-        showSlide(slideIndex);
-    }
 
-    function changeSlide(n) {
-        clearInterval(slideInterval); // Limpa o intervalo atual
-        slideIndex += n;
-        showSlide(slideIndex);
-        slideInterval = setInterval(autoSlide, 3000); // Inicia um novo intervalo
-    }
-
-    function showSlide(n) {
-        var slides = document.getElementsByClassName("slide");
-
-        if (n > slides.length) {
-            slideIndex = 1;
-        }
-
-        if (n < 1) {
-            slideIndex = slides.length;
-        }
-
-        for (var i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-
-        slides[slideIndex - 1].style.display = "block";
-    }
-</script>
 
 </body>
 
@@ -286,7 +259,7 @@
 </div>
 <br>
 <nav id="sideNav" onclick="closeMenu()">
-     <button><h3>X</h3> </button>
+     
     <img src="brasao.png" alt="Logo" width="50">
     <h3>Pelada Futebol Club</h3>
     <a href="index.html">Início</a>
@@ -303,32 +276,32 @@
 
 <section>
     <div class="box" style="background-color:#aaa;">
-        <div class="icon"><img src="artilheiro2.png" alt="Logo" height="100"></div>
+        <div class="icon"><img src="sport.png" alt="Logo" height="100"></div>
         <a href="gol.html"><h3></h3></a>
     </div>
 
     <div class="box" style="background-color:#aaa;">
-        <div class="icon"><img src="membros.png" alt="Logo" height="100"></div>
+        <div class="icon"><img src="santacruz.png" alt="Logo" height="80"></div>
         <a href="membros.html"><h3></h3></a>
     </div>
 <p>
     <div class="box" style="background-color:#aaa;">
-        <div class="icon"><img src="destaque2.png" alt="Logo" height="100"></div>
+        <div class="icon"><img src="nautico.png" alt="Logo" height="100"></div>
         <a href="destaque.html"><h3></h3></a>
     </div>
 
     <div class="box" style="background-color:#aaa;">
-        <div class="icon"><img src="bolamurcha.png" alt="Logo" height="90"></div>
+        <div class="icon"><img src="palmeiras.png" alt="Logo" height="120"></div>
         <a href="bolamurcha.html"><h3></h3></a>
     </div>
 <p>
     <div class="box" style="background-color:#aaa;">
-        <div class="icon"><img src="goleiro.png" alt="Logo" height="100"></div>
+        <div class="icon"><img src="vasco.png" alt="Logo" height="100"></div>
         <a href="goleiro.html"><h3></h3></a>
     </div>
 
     <div class="box" style="background-color:#aaa;">
-        <div class="icon"><img src="aleatorio.png" alt="Logo" height="100"></div>
+        <div class="icon"><img src="bahia.png" alt="Logo" height="100"></div>
         <a href="aleatorio.html"><h3></h3></a>
     </div>
 </section>
@@ -343,14 +316,17 @@
 <script>
     function toggleMenu() {
         var nav = document.getElementById('sideNav');
-        nav.classList.toggle('open');
-    }
-
-    function closeMenu() {
-        var nav = document.getElementById('sideNav');
-        if (nav.classList.contains('open')) {
+		var menuToggle = document.getElementById('menuToggle');
+        
+       if (nav.classList.contains('open')) {
             nav.classList.remove('open');
+            menuToggle.textContent = "☰";
+        }else {
+            nav.classList.add('open');
+            menuToggle.textContent = "X";
         }
+		
+		
     }
 var slideIndex = 1;
     showSlide(slideIndex);
