@@ -9,6 +9,15 @@
 	<center><h2><b>Membros da Pelada</b></h2></center>
 </header>
     <style>
+	    .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 100px;
+            background-color: #ffffff;
+            box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+	    text-align: left;
+	    border-radius: 20px;
+        }
 	.gallery {
             display: flex;
             flex-wrap: wrap;
@@ -275,6 +284,7 @@
 	    <center><img src="logo.png" alt="Logo" width="150"></center>  
         </nav>
     <section>
+<div class="container">
  <body>
     <div class="gallery">
         <div class="thumbnail" onclick="openModal('webson.jpg', 'Pré-descrição 1', 
@@ -400,6 +410,7 @@
             <div class="modal-text" id="modalText"></div> <!-- Adicionado -->
         </div>
     </div>
+</div>
     </section>
     <footer>
         <p><h5>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</h5></p>
