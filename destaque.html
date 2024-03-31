@@ -1,19 +1,65 @@
-
+  
 <!DOCTYPE html>
+ 
 <html lang="pt-br">
+<link rel="icon" type="image/x-icon" href="brasao.png">
 <header>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre</title>
-	<button onclick="toggleMenu()">☰</button>
-	 
-</header>
+    <meta property="og:image" content="https://images.app.goo.gl/f7QsPDCRovHP8cCR7">
+    <title>Sobre | Pelada Futebol Club</title>
+	
+	
+  <div class="menu-container">
+  <button onclick="toggleMenu()"><a class="yellow-text"><h3>☰</h3></button></a>
+  <center><img src="logopelada.jpg" width="60%"></center>
+</div>
+	
+	</header>
+		<br>
     <style>
+	
+	    .menu-container {
+            display: flex;
+            align-items: center; /* Alinhar itens verticalmente */
+  }
+        .menu-button {
+            background-color: #007bff; /* Cor de fundo do botão */
+            color: #fff; /* Cor do texto do botão */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 20px; /* Espaçamento à direita do botão */
+  }
+		   
+		    .yellow-text {
+             color: #fff;
+			
+		.container3 {
+		     padding: 40px;
+             margin-left: 800 px;
+             text-align: left;
+                   }
+        .titulo {
+              margin: left
+                }
+	            }
+	    .container1 {
+            max-width: 90%;
+            margin: 0 auto;
+            padding: px;
+            background-color: #666;
+            box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+	        text-align: left;
+	        border-radius: 10px;
+			
+        }
 	    .container {
-            max-width: 100%;
+            max-width: 90%;
             margin: 0 auto;
             padding: 10px;
-            background-color: #ffffff;
+            background-color: #2E8B57;
             box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
 	    text-align: left;
 	    border-radius: 20px;
@@ -23,25 +69,26 @@
             font-family: Arial, sans-serif; 
             margin: 50;
             padding: 50;
-            background-color: #f0f0f0;
-            color: #fffwe;
+            background-color: #2E8B57;
+            color: #fff;
         }
         header {
-            background-color: #333;
+            background-color: #2E8B57;
             color: white;
             padding: 10px;
-            text-align: left;
+            text-align: centert;
         }
         nav {
-            background-color: #333;
+            background-color: #2E8B57;
             color: white;
             width: 200px;
             height: 100%;
             position: fixed;
+			text-align: right;
             top: 0;
             left: -200px;
-            transition: left 0.5s ease;
-            padding-top: 60px;
+            transition: left 0.1s ease;
+            padding-top: 2px;
             z-index: 100;
         }	
         nav.open {
@@ -52,7 +99,7 @@
             color: white;
             text-decoration: none;
             padding: 5px;
-            border-bottom: 1px solid #555;
+            border-bottom: px solid #2E8B57;
             text-align: left;
         }
         nav img {
@@ -61,28 +108,30 @@
             padding: 0px 0;
         }
         section {
-            padding: 40px;
-            margin-left: 800 px;
+            padding: 0px;
+            margin-left: px;
             text-align: left;
 		}
         footer {
-            background-color:  #333;
+            background-color:  #2E8B57;
             color: white;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
         }
         button {
-            background-color: #444; /* Verde grama */
-            color: white; /* Cor do texto branca */
+            background-color: #2E8B57; 
+            color: white; 
             border: none;
-            padding: 10px 20px;
+            padding: 6px 10px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 12px;
             margin: 6px 3px;
             cursor: pointer;
-            border-radius: 60px;
+            border-radius: 20px;
+			
+			
 			
         }
 
@@ -118,7 +167,7 @@
         }
 		
 		.box {
-            width: 100%;
+            width: 90%;
             padding: 0px;
             box-sizing: border-box;
 			border: 2px 
@@ -128,7 +177,7 @@
        }
 	    .box1 {
             margin: 5px;
-		    width:100%;
+		    width:90%;
             height: 70px;
 		    border: 3px 
 		    solid black;
@@ -158,42 +207,153 @@
         button.menu-btn:hover {
             color: #ccc;
         }
+		.slideshow-container {
+            max-width: 500px;
+            position: relative;
+            margin: auto;
+        }
+
+        .slide {
+            position: relative;
+            text-align: center;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .slide-description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .slide:hover .slide-description {
+            opacity: 1;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            z-index: 0;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
     </style>
+	<style>
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        .slide {
+            position: relative;
+            text-align: center;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+			border-radius: 10px;
+        }
+
+        
+           
+           
+			border-radius: 10px;
+        }
+
+        .slide:hover .slide-description {
+            opacity: 1;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+		hr {
+        border: none; /* Remove a borda padrão */
+        height: 2px; /* Define a altura da linha */
+        background-color: #fff; /* Define a cor da linha, neste caso vermelho */
+}
+
+    </style>
+	
     <body>
-    <center>
-			<br>
-			
-           
-			
-    </center>
-           
+              
     
         <nav id="sideNav" onclick="closeMenu()">
+		
+			<button onclick="toggleMenu()">
+	<a class="yellow-text"><h3>X</h3></button></a>
 		<br>
 		<br>
 		<br>
 		<br>
-        <img src="brasao.png" alt="Logo" width="50">
-        <center>Pelada Futebol Club</center>
-		<br>
+        <center><img src="brasao.png" alt="Logo" width="100"></center>
         <br>
-        <a href="https://websonsantana.github.io/peladadocondominio" > Início</a>
-	<a href="destaque.html">sobre</a>
-        <a href="financeiro.html">Financeiro</a>
-        <a href="gol.html">Artilheiro</a>
-        <a href="goleiro.html">Goleiro</a>
-        <a href="bolamurcha.html">Bola Murcha</a>
-        <a href="aleatorio.html">Gerador de Equipes</a>
-        <a href="contato.html">Contate-nos</a>
-	<a href="membros.html">Membros</a>	
-        <a href="patrocinio.html">Patrocínio</a>
+        <br>
+		
+    <a href="https://websonsantana.github.io/peladadocondominio">Início</a>
+    <a href="destaque.html">sobre</a>
+    <a href="financeiro.html">Financeiro</a>
+    <a href="gol.html">Artilheiro</a>
+    <a href="goleiro.html">Goleiro</a>
+    <a href="bolamurcha.html">Bola Murcha</a>
+    <a href="aleatorio.html">Gerador de Equipes</a>
+    <a href="contato.html">Contate-nos</a>
+    <a href="membros.html">Membros</a>
+    <a href="patrocinio.html">Patrocínio</a>
+    
 		<br>
 		<br>
 		<br>
-	    <center><img src="logo.png" alt="Logo" width="150"></center>  
+	  <center><img src="logo.png" alt="Logo" width="80"></center>
         </nav>
+		
+		<hr>
     <section>
-	<center><h2><b>Sobre</b></h2></center>
+    <center><h2><b>Sobre</b></h2></center>
 	<div class="container">   
 		<center><img src="brasao.png" alt="Logo" width="150"></center>
 		<br>
@@ -210,16 +370,16 @@
 	   <P> O banho de piscina após as partidas não apenas refresca os jogadores, mas também proporciona um ambiente relaxante para continuar as conversas e fortalecer os laços de amizade.</P>
 	   <P>Além disso, a Pelada Futebol Club funciona como um ponto de encontro regular para os moradores do Condomínio Porto do Cabo, permitindo que eles se conectem além das fronteiras de suas residências.</P> 
 	   <P>Essa iniciativa não apenas promove um estilo de vida ativo e saudável, mas também enriquece a comunidade local, estimulando a colaboração e a solidariedade entre os residentes</P>
-	</div>      
-    </section>
+	</div>   
+</section>
+	<hr>
+	     <br>
     <footer>
-        <p><h5>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</h5></p>
+        <p><h5>&copy; <a class="yellow-text">2024 WS Solucoes Tecnológias. Todos os Direitos Reservados.</h5></p></a>
     </footer>
 	    <br>
 	    
-    <center>
-        <img src="logo.png" alt="Logo" width="200" >
-    </center>
+   
 	    
     <script>
         function toggleMenu() {
@@ -233,28 +393,40 @@
                 nav.classList.remove('open');
             }
         }
-        function exibirSaldo() {
-                document.getElementById("saldo-em-caixa").style.display = "block";
-                // Aqui você pode adicionar lógica para buscar e exibir o saldo real em vez de um valor fixo
-            }
+        var slideIndex = 1;
+    showSlide(slideIndex);
+    var slideInterval = setInterval(autoSlide, 4000); // Intervalo de 3 segundos
 
-        function fecharSaldo() {
-                document.getElementById("saldo-em-caixa").style.display = "none";
-            }
-    </script>
-	 <style>
-        /* Estilos para a caixa flutuante */
-        #saldo-em-caixa {
-            display: none; /* Inicialmente escondido */
-            position: fixed;
-            bottom: 500px;
-            right: 200px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 9999;
+    function autoSlide() {
+        slideIndex++;
+        showSlide(slideIndex);
+    }
+
+    function changeSlide(n) {
+        clearInterval(slideInterval); // Limpa o intervalo atual
+        slideIndex += n;
+        showSlide(slideIndex);
+        slideInterval = setInterval(autoSlide, 4000); // Inicia um novo intervalo
+    }
+
+    function showSlide(n) {
+        var slides = document.getElementsByClassName("slide");
+
+        if (n > slides.length) {
+            slideIndex = 1;
         }
-    </style>
+
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+    }
+    </script>
+	
 </body>
 </html>
