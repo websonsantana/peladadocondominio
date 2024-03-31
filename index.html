@@ -1,113 +1,213 @@
+  
 <!DOCTYPE html>
+ 
 <html lang="pt-br">
-<head>
+<link rel="icon" type="image/x-icon" href="brasao.png">
+<header>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pelada Futebol Club</title>
+    <meta property="og:image" content="https://images.app.goo.gl/f7QsPDCRovHP8cCR7">
+    <title>Início | WS Soluções Tecnológicas</title>
+	
+	
+  <div class="menu-container">
+  <button onclick="toggleMenu()"><a class="yellow-text"><h3>☰</h3></button></a>
+  <center><img src="logopelada.jpg" width="60%"></center>
+</div>
+	
+	</header>
+		<br>
     <style>
-	    .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 1px;
-            background-color: #ffffff;
-            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
-			text-align: left;
-			border-radius: 2px;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #000; /* Cor do texto */
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 5px;
-            text-align: left;
-            position: relative;
-        }
-
-        #menuToggle {
-            background-color: #444;
-            color: white;
+	
+	    .menu-container {
+            display: flex;
+            align-items: center; /* Alinhar itens verticalmente */
+  }
+        .menu-button {
+            background-color: #007bff; /* Cor de fundo do botão */
+            color: #fff; /* Cor do texto do botão */
             border: none;
             padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 12px;
-            margin: 6px 85%;
-            cursor: pointer;
-            border-radius: 60px;
+            border-radius: 5px;
+            margin-right: 20px; /* Espaçamento à direita do botão */
+  }
+		   
+		    .yellow-text {
+             color: #fff;
+			
+		.container3 {
+		     padding: 40px;
+             margin-left: 800 px;
+             text-align: left;
+                   }
+        .titulo {
+              margin: left
+                }
+	            }
+	    .container1 {
+            max-width: 90%;
+            margin: 0 auto;
+            padding: px;
+            background-color: #666;
+            box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+	        text-align: left;
+	        border-radius: 10px;
+			
         }
-
+	    .container {
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+	    text-align: left;
+	    border-radius: 20px;
+			
+        }
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 50;
+            padding: 50;
+            background-color: #2E8B57;
+            color: #fffwe;
+        }
+        header {
+            background-color: #2E8B57;
+            color: white;
+            padding: 10px;
+            text-align: centert;
+        }
         nav {
-            background-color: #333;
+            background-color: #2E8B57;
             color: white;
             width: 200px;
             height: 100%;
             position: fixed;
+			text-align: right;
             top: 0;
             left: -200px;
-            transition: left 0.5s ease;
-            padding-top: 60px;
-            z-index: 0;
-			
-        }
-
+            transition: left 0.1s ease;
+            padding-top: 2px;
+            z-index: 100;
+        }	
         nav.open {
             left: 0;
         }
-
-        nav a {
+         nav a {
             display: block;
             color: white;
             text-decoration: none;
             padding: 5px;
-            border-bottom: 1px solid #555;
+            border-bottom: px solid #2E8B57;
             text-align: left;
-			
         }
-
         nav img {
             display: block;
             margin: 0 auto;
             padding: 0px 0;
         }
-
         section {
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .box {
-            width: 125px;
-            padding: 20px;
-            margin: 10px;
-            background-color: #aaa;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-			opacity: 0,1
-			transition: opacity 0.3s ease;
-        }
-
-        .box .icon {
-            margin-bottom: 10px;
-        }
-
+            padding: 0px;
+            margin-left: 800 px;
+            text-align: left;
+		}
         footer {
-            background-color: #333;
+            background-color:  #2E8B57;
             color: white;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
         }
-.slideshow-container {
+        button {
+            background-color: #2E8B57; 
+            color: white; 
+            border: none;
+            padding: 6px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 6px 3px;
+            cursor: pointer;
+            border-radius: 20px;
+			
+			
+			
+        }
+
+        button:hover {
+            background-color: #000; /* Um tom mais escuro quando o botão é passado o mouse */
+        }
+        @media screen and (max-width: px) {
+            nav {
+                left: -200px;
+            }
+            
+            nav.open {
+                left: -200px;
+            }
+            
+        }
+		
+		a {
+                text-decoration: none; /* remove o sublinhado */
+                color: black; /* define a cor do texto como preto */
+          }
+		
+        .symbols {
+            position: absolute;
+            top: 10;
+            right: 10;
+        }
+        .title {
+            position: absolute;
+            bottom: 22;
+            width: 100%;
+            text-align: center;
+        }
+		
+		.box {
+            width: 90%;
+            padding: 0px;
+            box-sizing: border-box;
+			border: 2px 
+			solid black;
+            position: relative;
+			
+       }
+	    .box1 {
+            margin: 5px;
+		    width:90%;
+            height: 70px;
+		    border: 3px 
+		    solid black;
+			border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+			transition: transform 0.3s ease;
+			box-sizing: border-box;
+			}
+			
+			.box1:hover {
+            transform: scale(0.85);
+        }
+		.box1 img {
+            margin-right: 10px;
+        }
+		@media screen and (max-width: 768px) {
+            nav {
+                left: -200px;
+            }
+
+            nav.open {
+                left: 0;
+            }
+
+            
+        button.menu-btn:hover {
+            color: #ccc;
+        }
+		.slideshow-container {
             max-width: 500px;
             position: relative;
             margin: auto;
@@ -162,19 +262,9 @@
             right: 0;
         }
     </style>
-</head>
-<body>
-<header>
-   <button id="menuToggle" onclick="toggleMenu()">☰</button>
-	    <center>
-	<img src="brasao.png" alt="Logo" width="80">
-    <h2><b>Pelada Futebol Club</h2>
-	</center>
-</header>
-<br>
-<style>
+	<style>
         .slideshow-container {
-            max-width: 83%;
+            max-width: 100%;
             position: relative;
             margin: auto;
         }
@@ -191,17 +281,9 @@
 			border-radius: 10px;
         }
 
-        .slide-description {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            box-sizing: border-box;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        
+           
+           
 			border-radius: 10px;
         }
 
@@ -229,63 +311,29 @@
         .next {
             right: 0;
         }
+		hr {
+        border: none; /* Remove a borda padrão */
+        height: 2px; /* Define a altura da linha */
+        background-color: #fff; /* Define a cor da linha, neste caso vermelho */
+}
+
     </style>
-</head>
-<body>
-
-<div class="slideshow-container">
-	 <div class="slide">
-        <a href="pagina1.html">
-            <img src="imagem.jpg" alt="Slide 1">
-            <div class="slide-description">Descrição do Slide 1</div>
-        </a>
-    </div>
-	 <div class="slide">
-        <a href="pagina1.html">
-            <img src="imagem2.jpg" alt="Slide 2">
-            <div class="slide-description">Descrição do Slide 1</div>
-        </a>
-    </div>
-	 <div class="slide">
-        <a href="pagina1.html">
-            <img src="imagem3.jpg" alt="Slide 3">
-            <div class="slide-description">Descrição do Slide 1</div>
-        </a>
-    </div>
-    <div class="slide">
-        <a href="pagina1.html">
-            <img src="imagem4.jpg" alt="Slide 4">
-            <div class="slide-description">Descrição do Slide 1</div>
-        </a>
-    </div>
-    <div class="slide">
-        <a href="pagina2.html">
-            <img src="imagem5.jpg" alt="Slide 5">
-            <div class="slide-description">Descrição do Slide 2</div>
-        </a>
-    </div>
-    <div class="slide">
-        <a href="pagina3.html">
-            <img src="imagem6.jpg" alt="Slide 6">
-            <div class="slide-description">Descrição do Slide 3</div>
-        </a>
-    </div>
-    <button class="prev" onclick="changeSlide(-1)"><</button>
-    <button class="next" onclick="changeSlide(1)">></button>
-</div>
-<br>
-<br>
-
-
-</body>
-
-
-</div>
-<br>
-<nav id="sideNav" onclick="closeMenu()">
-     
-    <img src="brasao.png" alt="Logo" width="50">
- 
+	
+    <body>
+              
+    
+        <nav id="sideNav" onclick="closeMenu()">
+		
+			<button onclick="toggleMenu()">
+	<a class="yellow-text"><h3>X</h3></button></a>
+		<br>
+		<br>
+		<br>
+		<br>
+        <center><img src="brasao.png" alt="Logo" width="100"></center>
+        <br>
+        <br>
+		
     <a href="https://websonsantana.github.io/peladadocondominio">Início</a>
     <a href="destaque.html">sobre</a>
     <a href="financeiro.html">Financeiro</a>
@@ -296,36 +344,60 @@
     <a href="contato.html">Contate-nos</a>
     <a href="membros.html">Membros</a>
     <a href="patrocinio.html">Patrocínio</a>
-    <img src="logo.png" alt="Logo" width="150">
-</nav>
-
-<section>
-   
+    
+		<br>
+		<br>
+		<br>
+	  <a class="yellow-text"><center><h4>Transformando e Inovando</h4> </center>  </a>
+        </nav>
+		
+		<hr>
+    <section>
+    <div class="slideshow-container">
+        <div class="slide">
+            <a href=".HTML">
+                <img src="imagem.jpg" alt="Slide 1">
+            </a>
+        </div>
+        <div class="slide">
+            <a href=".html">
+                <img src="imagem2.jpg" alt="Slide 2">
+            </a>
+        </div>
+        <div class="slide">
+		<a href=".html">
+         <img src="imagem3.jpg" alt="Slide 3">
+            </a>
+        </div>
+		<div class="slide">
+		<a href=".html">
+         <img src="imagem4.jpg" alt="Slide 3">
+            </a>
+        </div>
+    </div>
 </section>
-
-
-
-
-<footer>
-    <p>&copy; 2024 Pelada Futebol Club. Todos os Direitos Reservados.</p>
-</footer>
-
-<script>
-    function toggleMenu() {
-        var nav = document.getElementById('sideNav');
-		var menuToggle = document.getElementById('menuToggle');
-        
-       if (nav.classList.contains('open')) {
-            nav.classList.remove('open');
-            menuToggle.textContent = "☰";
-        }else {
-            nav.classList.add('open');
-            menuToggle.textContent = "X";
+	<hr>
+	     <br>
+    <footer>
+        <p><h5>&copy; <a class="yellow-text">2024 WS Solucoes Tecnológias. Todos os Direitos Reservados.</h5></p></a>
+    </footer>
+	    <br>
+	    
+   
+	    
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('sideNav');
+            nav.classList.toggle('open');
         }
-		
-		
-    }
-var slideIndex = 1;
+
+        function closeMenu() {
+            var nav = document.getElementById('sideNav');
+            if (nav.classList.contains('open')) {
+                nav.classList.remove('open');
+            }
+        }
+        var slideIndex = 1;
     showSlide(slideIndex);
     var slideInterval = setInterval(autoSlide, 4000); // Intervalo de 3 segundos
 
@@ -358,7 +430,7 @@ var slideIndex = 1;
 
         slides[slideIndex - 1].style.display = "block";
     }
-
-</script>
+    </script>
+	
 </body>
 </html>
