@@ -33,40 +33,57 @@
         .footer p {
             margin: 5px 0;
         }
+        .image {
+            width: 100%;
+            height: auto;
+        }
+        input[type="text"], input[type="number"], input[type="date"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>PROPOSTA COMERCIAL</h1>
+            <img src="caminho_para_logo.png" alt="Logo da Empresa" class="image">
             <p>sistema fotovoltaico</p>
-            <p>3,33 kWp</p>
-            <p>Raimundo - 03/08/2024</p>
-            <p>Proposta validade até dia 13/08/2024</p>
+            <p><input type="text" id="potencia" name="potencia" placeholder="Potência do sistema (ex: 3,33 kWp)"></p>
+            <p><input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente (ex: Raimundo)"></p>
+            <p><input type="date" id="data_proposta" name="data_proposta" placeholder="Data da Proposta"></p>
+            <p><input type="date" id="validade_proposta" name="validade_proposta" placeholder="Validade da Proposta"></p>
         </div>
         <div class="section">
             <h2>COMO FUNCIONA?</h2>
+            <img src="caminho_para_imagem_funcionamento.png" alt="Como Funciona" class="image">
         </div>
         <div class="section">
             <h2>SEU PROJETO</h2>
-            <p>Potência do sistema: 3,33kWp</p>
-            <p>Inversor 3</p>
-            <p>6 Módulos Solares monofaciais de 555W</p>
-            <p>Geração estimada mensal de 414,48kWh/mês</p>
-            <p>Economia de R$ 474,24 por mês</p>
-            <p>Área mínima: 15,00 m²</p>
+            <p><input type="text" id="potencia_sistema" name="potencia_sistema" placeholder="Potência do sistema"></p>
+            <p><input type="text" id="inversor" name="inversor" placeholder="Inversor"></p>
+            <p><input type="number" id="modulos" name="modulos" placeholder="Número de Módulos Solares"></p>
+            <p><input type="number" id="geracao_estimativa" name="geracao_estimativa" placeholder="Geração estimada mensal (kWh/mês)"></p>
+            <p><input type="number" id="economia_mensal" name="economia_mensal" placeholder="Economia mensal (R$)"></p>
+            <p><input type="number" id="area_minima" name="area_minima" placeholder="Área mínima (m²)"></p>
         </div>
         <div class="section">
             <h2>GARANTIAS</h2>
-            <p>Módulos solares 25 anos de eficiência e 10 anos para defeito de fabricação</p>
-            <p>Inversores 10 anos</p>
-            <p>Micro Inversores 12 a 15 anos</p>
-            <p>Estrutura 25 anos</p>
-            <p>Instalação 12 meses</p>
+            <textarea id="garantias" name="garantias" placeholder="Detalhe as garantias aqui..."></textarea>
         </div>
         <div class="section">
             <h2>SEU INVESTIMENTO</h2>
-            <p>Valor R$ 11.778,72</p>
+            <p><input type="number" id="valor" name="valor" placeholder="Valor (R$)"></p>
             <table border="1" cellpadding="5" cellspacing="0">
                 <tr>
                     <th>Descrição</th>
@@ -75,32 +92,34 @@
                     <th>Parcela</th>
                 </tr>
                 <tr>
-                    <td>BANCO BV FINANCEIRA</td>
-                    <td>60 meses</td>
-                    <td>R$434,76</td>
+                    <td><input type="text" id="descricao" name="descricao" placeholder="Descrição"></td>
+                    <td><input type="number" id="quantidade" name="quantidade" placeholder="Qtd"></td>
+                    <td><input type="number" id="meses" name="meses" placeholder="Meses"></td>
+                    <td><input type="number" id="parcela" name="parcela" placeholder="Parcela (R$)"></td>
                 </tr>
             </table>
             <p>Simulação sujeita a análise de crédito conforme a instituição financeira escolhida</p>
         </div>
         <div class="section">
             <h2>SUA ECONOMIA</h2>
-            <p>Sua conta de energia sem Energia Solar: R$ 6.136,80 / ano, R$ 511,40 / mês</p>
-            <p>Sua conta de energia com Energia Solar: R$ 445,91 / ano, R$ 37,16 / mês</p>
-            <p>Sua economia será de: R$ 5.690,89 / ano, R$ 474,24 / mês</p>
+            <p><input type="number" id="conta_sem_energia" name="conta_sem_energia" placeholder="Conta sem Energia Solar (R$ / ano)"></p>
+            <p><input type="number" id="conta_com_energia" name="conta_com_energia" placeholder="Conta com Energia Solar (R$ / ano)"></p>
+            <p><input type="number" id="economia_anual" name="economia_anual" placeholder="Economia Anual (R$)"></p>
         </div>
         <div class="section">
             <h2>SEU RETORNO</h2>
-            <p>Retorno de investimento em 2,12 anos</p>
+            <p><input type="number" id="retorno_investimento" name="retorno_investimento" placeholder="Retorno de Investimento (anos)"></p>
         </div>
         <div class="section">
             <h2>SUA RENTABILIDADE</h2>
+            <p><input type="text" id="rentabilidade" name="rentabilidade" placeholder="Rentabilidade"></p>
         </div>
         <div class="section">
             <h2>CAPACIDADE DE GERAÇÃO</h2>
-            <p>Energia Consumida X Gerada {KwH/mês}: 261,90</p>
-            <p>Árvores Salvas: 168.262,82</p>
-            <p>Anos de um carro fora de circulação: 36,68</p>
-            <p>Toneladas de CO2 não emitidos: 36,68</p>
+            <p><input type="number" id="energia_consumida_gerada" name="energia_consumida_gerada" placeholder="Energia Consumida X Gerada (kWh/mês)"></p>
+            <p><input type="number" id="arvores_salvas" name="arvores_salvas" placeholder="Árvores Salvas"></p>
+            <p><input type="number" id="anos_carro_fora" name="anos_carro_fora" placeholder="Anos de um carro fora de circulação"></p>
+            <p><input type="number" id="co2_nao_emitido" name="co2_nao_emitido" placeholder="Toneladas de CO2 não emitidos"></p>
         </div>
         <div class="section">
             <h2>NOS CUIDAMOS DE TUDO PARA VOCÊ</h2>
@@ -108,20 +127,19 @@
         <div class="section">
             <h2>NOSSOS PROJETOS</h2>
             <p>CONFIRA ALGUNS PROJETOS REALIZADOS PELA NOSSA EMPRESA.</p>
+            <img src="caminho_para_imagem_projetos.png" alt="Nossos Projetos" class="image">
         </div>
         <div class="section">
             <h2>PORQUE ESCOLHER O&M Solar</h2>
-            <p>Somos a primeira empresa comprometida em não apenas fornecer soluções de energia solar de alta qualidade, mas também em investir no pós-venda, garantindo durabilidade e acessibilidade. Na O&M Solar, a qualidade não é apenas uma promessa - é um compromisso. Nossos sistemas de energia solar são projetados para durar, proporcionando confiabilidade excepcional e eficiência energética ao longo do tempo. Além disso, tornamos a energia solar acessível a todos, oferecendo soluções adaptadas às necessidades individuais de cada cliente. Estamos aqui para você não apenas hoje, mas também no futuro, assegurando que sua transição para a energia solar seja uma escolha confiável e vantajosa. Junte-se a nós e descubra o poder da energia solar sustentável com o suporte total da O&M Solar.</p>
+            <textarea id="porque_escolher" name="porque_escolher" placeholder="Texto explicando por que escolher O&M Solar..."></textarea>
         </div>
         <div class="footer">
             <h2>ENTRE EM CONTATO</h2>
-            <p>Mizael / O&M Solar</p>
-            <p>Telefone: 84984157449</p>
-            <p>Email: mizael@omsolar.com.br</p>
-            <p>Endereço: CABO DE SANTO AGOSTINHO - PE, AVENIDA ERALDO BARROS DE SOUZA, 259 - COHAB, CEP: 54.515-110</p>
-            <p>Telefone: 8198229-4377</p>
-            <p><a href="https://api.whatsapp.com/send?phone=84984157449">WhatsApp</a></p>
-            <p><a href="https://oemsolar.api.safeleads.app/api/PreProposta/VisualizarHTML/287?code=fda6b85efc9bc671346c976b5e5600a6">Link para proposta</a></p>
+            <p><input type="text" id="contato_nome" name="contato_nome" placeholder="Nome de Contato"></p>
+            <p><input type="tel" id="contato_telefone" name="contato_telefone" placeholder="Telefone"></p>
+            <p><input type="email" id="contato_email" name="contato_email" placeholder="Email"></p>
+            <p><input type="text" id="contato_endereco" name="contato_endereco" placeholder="Endereço"></p>
+            <input type="submit" value="Gerar Nova Proposta">
         </div>
     </div>
 </body>
