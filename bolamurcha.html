@@ -4,16 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leitor de Código de Barras</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+    <style>
+        #interactive {
+            position: relative;
+            width: 100%;
+        }
+        #interactive video {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <h1>Escaneie o código de barras</h1>
-    <input type="text" id="barcodeInput" placeholder="Escaneie o código de barras aqui">
+    <div id="interactive" class="viewport"></div>
     <p id="result"></p>
 
     <script>
-        document.getElementById('barcodeInput').addEventListener('input', function() {
-            const barcode = this.value;
+        Quagga.init({
+            inputStream: {
+                name: "Live",
+                type: "LiveStream",
+                target: document.querySelector('#interactive') // Elemento onde o vídeo será exibido
+            },
+            decoder: {
+                readers: ["code_128_reader", "ean_reader", "ean_8_reader", "code_39_reader", "code_39_vin_reader", "codabar_reader", "upc_reader", "upc_e_reader", "i2of5_reader"] // Tipos de códigos de barras suportados
+            }
+        }, function (err) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            console.log("Quagga inicializado com sucesso");
+            Quagga.start();
+        });
+
+        Quagga.onDetected(function (data) {
+            const barcode = data.codeResult.code;
             document.getElementById('result').textContent = 'Resultado: ' + barcode;
+            Quagga.stop(); // Para de escanear após encontrar o código
         });
     </script>
 </body>
