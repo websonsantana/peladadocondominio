@@ -6,19 +6,29 @@
     <title>Leitor de Código de Barras</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
     <style>
+        #container {
+            display: flex;
+            align-items: center;
+        }
         #interactive {
             position: relative;
             width: 70%;
         }
         #interactive video {
-            width: 70%;
+            width: 100%;
+        }
+        #result {
+            margin-left: 20px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
     <h1>Escaneie o código de barras</h1>
-    <div id="interactive" class="viewport"></div>
-    <p id="result"></p>
+    <div id="container">
+        <div id="interactive" class="viewport"></div>
+        <p id="result">Resultado: </p>
+    </div>
 
     <script>
         Quagga.init({
