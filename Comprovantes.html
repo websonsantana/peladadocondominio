@@ -5,226 +5,312 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escala de Trabalho</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+        .table-container {
+            margin-bottom: 20px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-bottom: 20px;
         }
         th, td {
-            border: 1px solid black;
-            padding: 8px;
+            border: 1px solid #ddd;
+            padding: 10px;
             text-align: center;
         }
         th {
             background-color: #f2f2f2;
         }
         .folga {
-            background-color: #f9d6d6;
+            background-color: red;
+            color: white;
+        }
+        .ana {
+            background-color: #d0e6ff;
+        }
+        .sibele {
+            background-color: #e6f0d0;
+        }
+        .total {
+            font-weight: bold;
+        }
+        .button-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .button-container select, .button-container button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .button-container select {
+            background-color: #0056b3;
+        }
+        .button-container select:hover {
+            background-color: #004080;
+        }
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+        textarea {
+            width: 100%;
+            height: 50px;
+            margin-top: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .notes {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>Dia</th>
-                <th>Dia da Semana</th>
-                <th>Ana (Funcionário A)</th>
-                <th>Sibeli (Funcionário B)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Semana 1 -->
-            <tr>
-                <td>01</td>
-                <td>Quinta-feira</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-            <tr>
-                <td>02</td>
-                <td>Sexta-feira</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-            <tr>
-                <td>03</td>
-                <td>Sábado</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-            <tr>
-                <td>04</td>
-                <td>Domingo</td>
-                <td class="folga">Folga</td>
-                <td>13h40 às 21h</td>
-            </tr>
-            <tr>
-                <td>05</td>
-                <td>Segunda-feira</td>
-                <td class="folga">Folga</td>
-                <td>9h às 17h</td>
-            </tr>
-            <tr>
-                <td>06</td>
-                <td>Terça-feira</td>
-                <td>13h40 às 22h</td>
-                <td>9h às 17h</td>
-            </tr>
-            <tr>
-                <td>07</td>
-                <td>Quarta-feira</td>
-                <td>13h40 às 22h</td>
-                <td>9h às 17h</td>
-            </tr>
-            <!-- Semana 2 -->
-            <tr>
-                <td>08</td>
-                <td>Quinta-feira</td>
-                <td>13h40 às 22h</td>
-                <td>9h às 17h</td>
-            </tr>
-            <tr>
-                <td>09</td>
-                <td>Sexta-feira</td>
-                <td>13h40 às 22h</td>
-                <td>9h às 17h</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Sábado</td>
-                <td>13h40 às 22h</td>
-                <td>9h às 17h</td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>Domingo</td>
-                <td>13h40 às 21h</td>
-                <td class="folga">Folga</td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>Segunda-feira</td>
-                <td>9h às 17h</td>
-                <td class="folga">Folga</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>Terça-feira</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>Quarta-feira</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-            <!-- Semana 3 -->
-            <tr>
-                <td>15</td>
-                <td>Quinta-feira</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>Sexta-feira</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>Sábado</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>Domingo</td>
-                <td class="folga">Folga</td>
-                <td>13h40 às 21h</td>
-            </tr>
-            <tr>
-                <td>19</td>
-                <td>Segunda-feira</td>
-                <td>9h às 17h</td>
-                <td class="folga">Folga</td>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>Terça-feira</td>
-                <td>13h40 às 22h</td>
-                <td>9h às 17h</td>
-            </tr>
-            <tr>
-                <td>21</td>
-                <td>Quarta-feira</td>
-                <td>13h40 às 22h</td>
-                <td>9h às 17h</td>
-            </tr>
-            <!-- Semana 4 -->
-            <tr>
-                <td>22</td>
-                <td>Quinta-feira</td>
-                <td>13h40 às 22h</td>
-                <td>9h às 17h</td>
-            </tr>
-            <tr>
-                <td>23</td>
-                <td>Sexta-feira</td>
-                <td>13h40 às 22h</td>
-                <td>9h às 17h</td>
-            </tr>
-            <tr>
-                <td>24</td>
-                <td>Sábado</td>
-                <td>13h40 às 22h</td>
-                <td>9h às 17h</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>Domingo</td>
-                <td>13h40 às 21h</td>
-                <td class="folga">Folga</td>
-            </tr>
-            <tr>
-                <td>26</td>
-                <td>Segunda-feira</td>
-                <td>9h às 17h</td>
-                <td class="folga">Folga</td>
-            </tr>
-            <tr>
-                <td>27</td>
-                <td>Terça-feira</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-            <tr>
-                <td>28</td>
-                <td>Quarta-feira</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-            <!-- Semana 5 -->
-            <tr>
-                <td>29</td>
-                <td>Quinta-feira</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-            <tr>
-                <td>30</td>
-                <td>Sexta-feira</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-            <tr>
-                <td>31</td>
-                <td>Sábado</td>
-                <td>9h às 17h</td>
-                <td>13h40 às 22h</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <h1>Escala de Trabalho</h1>
+
+        <div class="button-container">
+            <select id="monthSelector" onchange="showMonth(this.value)">
+                <option value="08">Agosto</option>
+                <option value="09">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>
+            <button onclick="prevWeek()">Semana Anterior</button>
+            <button onclick="nextWeek()">Próxima Semana</button>
+        </div>
+
+        <div class="table-container">
+            <h2>Ana</h2>
+            <table id="anaSchedule">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Dia da Semana</th>
+                        <th>Turno</th>
+                        <th>Total de Horas</th>
+                        <th>Anotação</th>
+                    </tr>
+                </thead>
+                <tbody id="anaScheduleBody">
+                    <!-- A tabela será preenchida dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <h2>Sibele</h2>
+            <table id="sibeleSchedule">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Dia da Semana</th>
+                        <th>Turno</th>
+                        <th>Total de Horas</th>
+                        <th>Anotação</th>
+                    </tr>
+                </thead>
+                <tbody id="sibeleScheduleBody">
+                    <!-- A tabela será preenchida dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const hoursPerDay = {
+            "Ana": { start: 9, end: 22, break: 1 },
+            "Sibele": { start: 11.67, end: 20, break: 1 }
+        };
+
+        let currentMonth = '08';
+        let currentWeekStart = getFirstMondayOfMonth(currentMonth);
+        const allDays = Array.from({ length: 31 }, (_, i) => i + 1); // Supondo um mês com até 31 dias
+
+        function getFirstMondayOfMonth(month) {
+            const date = new Date(`2024-${month}-01`);
+            const dayOfWeek = date.getDay();
+            const daysToMonday = (dayOfWeek === 0 ? 6 : dayOfWeek - 1);
+            date.setDate(date.getDate() - daysToMonday);
+            return date;
+        }
+
+        function generateSchedule(month, startOfWeek) {
+            const schedule = [];
+            const firstMonday = getFirstMondayOfMonth(month);
+            const daysInMonth = new Date(2024, parseInt(month, 10), 0).getDate();
+            let dayOfMonth = 1;
+            let folgas = [];
+            let anaDaysOff = new Set();
+            let sibeleDaysOff = new Set();
+            
+            for (let i = 0; i < 7; i++) {
+                const date = new Date(startOfWeek);
+                date.setDate(date.getDate() + i);
+
+                if (date.getMonth() + 1 !== parseInt(month, 10)) {
+                    continue;
+                }
+
+                const day = date.getDate();
+                const dayOfWeek = date.toLocaleDateString('pt-BR', { weekday: 'long' });
+
+                let anaShift = "Folga";
+                let sibeleShift = "Folga";
+                let anaHours = "0h";
+                let sibeleHours = "0h";
+                let classAna = '';
+                let classSibele = '';
+
+                if (dayOfWeek === "domingo") {
+                    anaShift = "Folga";
+                    sibeleShift = "11h40 às 20h";
+                    anaHours = "0h";
+                    sibeleHours = calculateHours(11.67, 20);
+                    classAna = 'folga';
+                    classSibele = 'sibele';
+                } else if (dayOfWeek === "segunda-feira") {
+                    anaShift = "Folga";
+                    sibeleShift = "Folga";
+                    anaHours = "0h";
+                    sibeleHours = "0h";
+                    classAna = 'folga';
+                    classSibele = 'folga';
+                } else {
+                    if (!anaDaysOff.has(day) && !sibeleDaysOff.has(day)) {
+                        if (day % 2 === 0) { // Alterna os turnos para Ana e Sibele
+                            anaShift = "9h às 17h";
+                            sibeleShift = "13h40 às 22h";
+                            anaHours = calculateHours(9, 17);
+                            sibeleHours = calculateHours(13.67, 22);
+                            classAna = 'ana';
+                            classSibele = 'sibele';
+                        } else {
+                            anaShift = "13h40 às 22h";
+                            sibeleShift = "9h às 17h";
+                            anaHours = calculateHours(13.67, 22);
+                            sibeleHours = calculateHours(9, 17);
+                            classAna = 'ana';
+                            classSibele = 'sibele';
+                        }
+                    }
+                }
+
+                schedule.push({
+                    day,
+                    dayOfWeek,
+                    anaShift,
+                    sibeleShift,
+                    anaHours,
+                    sibeleHours,
+                    classAna,
+                    classSibele,
+                    noteAna: '',
+                    noteSibele: ''
+                });
+
+                // Configuração de folgas
+                if (dayOfWeek !== "domingo") {
+                    if (anaShift === "Folga" && !folgas.includes(day)) {
+                        folgas.push(day);
+                        anaDaysOff.add(day);
+                        // Certifica que a folga de Ana não é no mesmo dia da folga de Sibele
+                        if (folgas.length > 1) {
+                            folgas.shift(); // Remove o primeiro dia de folga se há mais de um
+                        }
+                    } else if (sibeleShift === "Folga" && !folgas.includes(day)) {
+                        folgas.push(day);
+                        sibeleDaysOff.add(day);
+                        if (folgas.length > 1) {
+                            folgas.shift(); // Remove o primeiro dia de folga se há mais de um
+                        }
+                    }
+                }
+            }
+
+            return schedule;
+        }
+
+        function calculateHours(start, end) {
+            return `${(end - start - 1).toFixed(1)}h`;
+        }
+
+        function showMonth(month) {
+            currentMonth = month;
+            currentWeekStart = getFirstMondayOfMonth(month);
+            showWeek(currentWeekStart);
+        }
+
+        function showWeek(startOfWeek) {
+            const anaScheduleBody = document.getElementById("anaScheduleBody");
+            const sibeleScheduleBody = document.getElementById("sibeleScheduleBody");
+            const schedule = generateSchedule(currentMonth, startOfWeek);
+
+            anaScheduleBody.innerHTML = "";
+            sibeleScheduleBody.innerHTML = "";
+
+            schedule.forEach(({ day, dayOfWeek, anaShift, sibeleShift, anaHours, sibeleHours, classAna, classSibele, noteAna, noteSibele }) => {
+                if (anaShift !== "Folga" || sibeleShift !== "Folga") {
+                    anaScheduleBody.innerHTML += `
+                        <tr class="${classAna}">
+                            <td>${day}</td>
+                            <td>${dayOfWeek}</td>
+                            <td>${anaShift}</td>
+                            <td>${anaHours}</td>
+                            <td><textarea placeholder="Anotações">${noteAna}</textarea></td>
+                        </tr>
+                    `;
+                    sibeleScheduleBody.innerHTML += `
+                        <tr class="${classSibele}">
+                            <td>${day}</td>
+                            <td>${dayOfWeek}</td>
+                            <td>${sibeleShift}</td>
+                            <td>${sibeleHours}</td>
+                            <td><textarea placeholder="Anotações">${noteSibele}</textarea></td>
+                        </tr>
+                    `;
+                }
+            });
+        }
+
+        function prevWeek() {
+            const firstMonday = new Date(currentWeekStart);
+            firstMonday.setDate(firstMonday.getDate() - 7);
+            currentWeekStart = firstMonday;
+            showWeek(currentWeekStart);
+        }
+
+        function nextWeek() {
+            const firstMonday = new Date(currentWeekStart);
+            firstMonday.setDate(firstMonday.getDate() + 7);
+            currentWeekStart = firstMonday;
+            showWeek(currentWeekStart);
+        }
+
+        // Inicializa a visualização com o mês e semana atual
+        showWeek(currentWeekStart);
+    </script>
 </body>
 </html>
