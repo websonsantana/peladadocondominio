@@ -22,8 +22,35 @@
             text-align: center;
             color: #444;
         }
-        .table-container {
+        .button-container {
             margin-bottom: 20px;
+            text-align: center;
+        }
+        .button-container select, .button-container button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .button-container select {
+            background-color: #0056b3;
+        }
+        .button-container select:hover {
+            background-color: #004080;
+        }
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+        .table-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+        .table-container {
+            flex: 1;
+            margin: 0 10px;
         }
         table {
             width: 100%;
@@ -51,28 +78,6 @@
         .total {
             font-weight: bold;
         }
-        .button-container {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .button-container select, .button-container button {
-            padding: 10px 20px;
-            margin: 5px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-        }
-        .button-container select {
-            background-color: #0056b3;
-        }
-        .button-container select:hover {
-            background-color: #004080;
-        }
-        .button-container button:hover {
-            background-color: #0056b3;
-        }
         textarea {
             width: 100%;
             height: 50px;
@@ -80,9 +85,6 @@
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ddd;
-        }
-        .notes {
-            margin-top: 10px;
         }
     </style>
 </head>
@@ -102,52 +104,59 @@
             <button onclick="nextWeek()">Próxima Semana</button>
         </div>
 
-        <div class="table-container">
-            <h2>Ana</h2>
-            <table id="anaSchedule">
-                <thead>
-                    <tr>
-                        <th>Dia</th>
-                        <th>Dia da Semana</th>
-                        <th>Turno</th>
-                        <th>Total de Horas</th>
-                        <th>Anotação</th>
-                    </tr>
-                </thead>
-                <tbody id="anaScheduleBody">
-                    <!-- A tabela será preenchida dinamicamente -->
-                </tbody>
-            </table>
-        </div>
+        <div class="table-wrapper">
+            <div class="table-container">
+                <h2>Ana</h2>
+                <table id="anaSchedule">
+                    <thead>
+                        <tr>
+                            <th>Dia</th>
+                            <th>Dia da Semana</th>
+                            <th>Turno</th>
+                            <th>Total de Horas</th>
+                            <th>Anotação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="anaScheduleBody">
+                        <!-- A tabela será preenchida dinamicamente -->
+                    </tbody>
+                </table>
+            </div>
 
-        <div class="table-container">
-            <h2>Sibele</h2>
-            <table id="sibeleSchedule">
-                <thead>
-                    <tr>
-                        <th>Dia</th>
-                        <th>Dia da Semana</th>
-                        <th>Turno</th>
-                        <th>Total de Horas</th>
-                        <th>Anotação</th>
-                    </tr>
-                </thead>
-                <tbody id="sibeleScheduleBody">
-                    <!-- A tabela será preenchida dinamicamente -->
-                </tbody>
-            </table>
+            <div class="table-container">
+                <h2>Sibele</h2>
+                <table id="sibeleSchedule">
+                    <thead>
+                        <tr>
+                            <th>Dia</th>
+                            <th>Dia da Semana</th>
+                            <th>Turno</th>
+                            <th>Total de Horas</th>
+                            <th>Anotação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sibeleScheduleBody">
+                        <!-- A tabela será preenchida dinamicamente -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <script>
         const hoursPerDay = {
-            "Ana": { start: 9, end: 22, break: 1 },
-            "Sibele": { start: 11.67, end: 20, break: 1 }
+            "Ana": { start: 9, end: 17.33, break: 1 }, // 09:00 às 17:20
+            "Sibele": { start: 13.67, end: 22, break: 1 } // 13:40 às 22:00
         };
+
+        const sundayShiftAna = "09h00 às 17h20";
+        const sundayShiftSibele = "11h40 às 20h00";
+        const defaultShiftAna = "09h00 às 17h20";
+        const defaultShiftSibele = "13h40 às 22h00";
+        const shiftAnaWhenSibeleOff = "13h00 às 22h00";
 
         let currentMonth = '08';
         let currentWeekStart = getFirstMondayOfMonth(currentMonth);
-        const allDays = Array.from({ length: 31 }, (_, i) => i + 1); // Supondo um mês com até 31 dias
 
         function getFirstMondayOfMonth(month) {
             const date = new Date(`2024-${month}-01`);
@@ -159,14 +168,14 @@
 
         function generateSchedule(month, startOfWeek) {
             const schedule = [];
-            const firstMonday = getFirstMondayOfMonth(month);
             const daysInMonth = new Date(2024, parseInt(month, 10), 0).getDate();
             let dayOfMonth = 1;
-            let folgas = [];
-            let anaDaysOff = new Set();
-            let sibeleDaysOff = new Set();
-            
-            for (let i = 0; i < 7; i++) {
+            const daysOffAna = new Set();
+            const daysOffSibele = new Set();
+            let anaDaysOffCount = 0;
+            let sibeleDaysOffCount = 0;
+
+            for (let i = 0; i < 7 * 6; i++) { // 6 semanas
                 const date = new Date(startOfWeek);
                 date.setDate(date.getDate() + i);
 
@@ -177,44 +186,49 @@
                 const day = date.getDate();
                 const dayOfWeek = date.toLocaleDateString('pt-BR', { weekday: 'long' });
 
-                let anaShift = "Folga";
-                let sibeleShift = "Folga";
-                let anaHours = "0h";
-                let sibeleHours = "0h";
+                let anaShift = defaultShiftAna;
+                let sibeleShift = defaultShiftSibele;
+                let anaHours = calculateHours(9, 17.33);
+                let sibeleHours = calculateHours(13.67, 22);
                 let classAna = '';
                 let classSibele = '';
 
                 if (dayOfWeek === "domingo") {
-                    anaShift = "Folga";
-                    sibeleShift = "11h40 às 20h";
-                    anaHours = "0h";
-                    sibeleHours = calculateHours(11.67, 20);
-                    classAna = 'folga';
-                    classSibele = 'sibele';
-                } else if (dayOfWeek === "segunda-feira") {
-                    anaShift = "Folga";
-                    sibeleShift = "Folga";
-                    anaHours = "0h";
-                    sibeleHours = "0h";
-                    classAna = 'folga';
-                    classSibele = 'folga';
+                    if (anaDaysOffCount === 0 && !daysOffAna.has(day)) {
+                        anaShift = sundayShiftAna;
+                        anaHours = calculateHours(9, 17.33);
+                        classAna = 'folga';
+                        daysOffAna.add(day);
+                        anaDaysOffCount++;
+                    }
+
+                    if (sibeleDaysOffCount === 0 && !daysOffSibele.has(day)) {
+                        sibeleShift = sundayShiftSibele;
+                        sibeleHours = calculateHours(11.67, 20);
+                        classSibele = 'folga';
+                        daysOffSibele.add(day);
+                        sibeleDaysOffCount++;
+                    }
                 } else {
-                    if (!anaDaysOff.has(day) && !sibeleDaysOff.has(day)) {
-                        if (day % 2 === 0) { // Alterna os turnos para Ana e Sibele
-                            anaShift = "9h às 17h";
-                            sibeleShift = "13h40 às 22h";
-                            anaHours = calculateHours(9, 17);
-                            sibeleHours = calculateHours(13.67, 22);
-                            classAna = 'ana';
-                            classSibele = 'sibele';
-                        } else {
-                            anaShift = "13h40 às 22h";
-                            sibeleShift = "9h às 17h";
-                            anaHours = calculateHours(13.67, 22);
-                            sibeleHours = calculateHours(9, 17);
-                            classAna = 'ana';
-                            classSibele = 'sibele';
-                        }
+                    if (!daysOffAna.has(day) && Math.random() < 0.2 && anaDaysOffCount < 3) {
+                        anaShift = "Folga";
+                        anaHours = "0";
+                        classAna = 'folga';
+                        daysOffAna.add(day);
+                        anaDaysOffCount++;
+                    }
+
+                    if (!daysOffSibele.has(day) && Math.random() < 0.2 && sibeleDaysOffCount < 3) {
+                        sibeleShift = "Folga";
+                        sibeleHours = "0";
+                        classSibele = 'folga';
+                        daysOffSibele.add(day);
+                        sibeleDaysOffCount++;
+                    }
+
+                    if (anaShift === "Folga") {
+                        sibeleShift = shiftAnaWhenSibeleOff;
+                        sibeleHours = calculateHours(13, 22);
                     }
                 }
 
@@ -226,91 +240,72 @@
                     anaHours,
                     sibeleHours,
                     classAna,
-                    classSibele,
-                    noteAna: '',
-                    noteSibele: ''
+                    classSibele
                 });
 
-                // Configuração de folgas
-                if (dayOfWeek !== "domingo") {
-                    if (anaShift === "Folga" && !folgas.includes(day)) {
-                        folgas.push(day);
-                        anaDaysOff.add(day);
-                        // Certifica que a folga de Ana não é no mesmo dia da folga de Sibele
-                        if (folgas.length > 1) {
-                            folgas.shift(); // Remove o primeiro dia de folga se há mais de um
-                        }
-                    } else if (sibeleShift === "Folga" && !folgas.includes(day)) {
-                        folgas.push(day);
-                        sibeleDaysOff.add(day);
-                        if (folgas.length > 1) {
-                            folgas.shift(); // Remove o primeiro dia de folga se há mais de um
-                        }
-                    }
-                }
+                dayOfMonth++;
             }
-
             return schedule;
         }
 
-        function calculateHours(start, end) {
-            return `${(end - start - 1).toFixed(1)}h`;
+        function calculateHours(startHour, endHour) {
+            return (endHour - startHour - 1).toFixed(2);
         }
 
         function showMonth(month) {
             currentMonth = month;
-            currentWeekStart = getFirstMondayOfMonth(month);
-            showWeek(currentWeekStart);
-        }
-
-        function showWeek(startOfWeek) {
-            const anaScheduleBody = document.getElementById("anaScheduleBody");
-            const sibeleScheduleBody = document.getElementById("sibeleScheduleBody");
-            const schedule = generateSchedule(currentMonth, startOfWeek);
-
-            anaScheduleBody.innerHTML = "";
-            sibeleScheduleBody.innerHTML = "";
-
-            schedule.forEach(({ day, dayOfWeek, anaShift, sibeleShift, anaHours, sibeleHours, classAna, classSibele, noteAna, noteSibele }) => {
-                if (anaShift !== "Folga" || sibeleShift !== "Folga") {
-                    anaScheduleBody.innerHTML += `
-                        <tr class="${classAna}">
-                            <td>${day}</td>
-                            <td>${dayOfWeek}</td>
-                            <td>${anaShift}</td>
-                            <td>${anaHours}</td>
-                            <td><textarea placeholder="Anotações">${noteAna}</textarea></td>
-                        </tr>
-                    `;
-                    sibeleScheduleBody.innerHTML += `
-                        <tr class="${classSibele}">
-                            <td>${day}</td>
-                            <td>${dayOfWeek}</td>
-                            <td>${sibeleShift}</td>
-                            <td>${sibeleHours}</td>
-                            <td><textarea placeholder="Anotações">${noteSibele}</textarea></td>
-                        </tr>
-                    `;
-                }
-            });
+            currentWeekStart = getFirstMondayOfMonth(currentMonth);
+            updateSchedule();
         }
 
         function prevWeek() {
-            const firstMonday = new Date(currentWeekStart);
-            firstMonday.setDate(firstMonday.getDate() - 7);
-            currentWeekStart = firstMonday;
-            showWeek(currentWeekStart);
+            currentWeekStart.setDate(currentWeekStart.getDate() - 7);
+            updateSchedule();
         }
 
         function nextWeek() {
-            const firstMonday = new Date(currentWeekStart);
-            firstMonday.setDate(firstMonday.getDate() + 7);
-            currentWeekStart = firstMonday;
-            showWeek(currentWeekStart);
+            currentWeekStart.setDate(currentWeekStart.getDate() + 7);
+            updateSchedule();
         }
 
-        // Inicializa a visualização com o mês e semana atual
-        showWeek(currentWeekStart);
+        function updateSchedule() {
+            const anaScheduleBody = document.getElementById('anaScheduleBody');
+            const sibeleScheduleBody = document.getElementById('sibeleScheduleBody');
+
+            anaScheduleBody.innerHTML = '';
+            sibeleScheduleBody.innerHTML = '';
+
+            const schedule = generateSchedule(currentMonth, currentWeekStart);
+
+            schedule.forEach(day => {
+                let anaClass = day.classAna ? day.classAna : '';
+                let sibeleClass = day.classSibele ? day.classSibele : '';
+
+                anaScheduleBody.innerHTML += `
+                    <tr class="${anaClass}">
+                        <td>${day.day}</td>
+                        <td>${day.dayOfWeek}</td>
+                        <td>${day.anaShift}</td>
+                        <td class="total">${day.anaHours} horas</td>
+                        <td><textarea placeholder="Anotação" id="noteAna-${day.day}"></textarea></td>
+                    </tr>
+                `;
+
+                sibeleScheduleBody.innerHTML += `
+                    <tr class="${sibeleClass}">
+                        <td>${day.day}</td>
+                        <td>${day.dayOfWeek}</td>
+                        <td>${day.sibeleShift}</td>
+                        <td class="total">${day.sibeleHours} horas</td>
+                        <td><textarea placeholder="Anotação" id="noteSibele-${day.day}"></textarea></td>
+                    </tr>
+                `;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateSchedule();
+        });
     </script>
 </body>
 </html>
